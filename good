@@ -3628,12 +3628,12 @@ local function CEBY_routine() -- Routine: StarterGui.YARHM.Universal
 	table.insert(module, {
 		Type = "Input",
 		Args = {"Target player", "Set target", function(Self, input)
-			if not Players:FindFirstChild(getPlayer(input, game.Players.LocalPlayer)) then
-				fu.notification("Player not found.")
+			local targetName = getPlayer(input, game.Players.LocalPlayer)
+			if not targetName or not Players:FindFirstChild(targetName) then
 				return
 			end
-			fu.notification("Target is set to " .. Players:FindFirstChild(getPlayer(input, game.Players.LocalPlayer)).Name)
-			target = Players:FindFirstChild(getPlayer(input, game.Players.LocalPlayer))
+			fu.notification("Target is set to " .. Players:FindFirstChild(targetName).Name)
+			target = Players:FindFirstChild(targetName)
 		end,}
 	})
 	
@@ -3678,12 +3678,12 @@ local function CEBY_routine() -- Routine: StarterGui.YARHM.Universal
 	table.insert(module, {
 		Type = "Input",
 		Args = {"Target fling player", "Set target", function(Self, input)
-			if not Players:FindFirstChild(getPlayer(input, game.Players.LocalPlayer)) then
-				fu.notification("Player not found.")
+			local targetName = getPlayer(input, game.Players.LocalPlayer)
+			if not targetName or not Players:FindFirstChild(targetName) then
 				return
 			end
-			fu.notification("Target is set to " .. Players:FindFirstChild(getPlayer(input, game.Players.LocalPlayer)).Name)
-			playerToFling = Players:FindFirstChild(getPlayer(input, game.Players.LocalPlayer))
+			fu.notification("Target is set to " .. Players:FindFirstChild(targetName).Name)
+			playerToFling = Players:FindFirstChild(targetName)
 		end,}
 	})
 	
@@ -5013,7 +5013,7 @@ local function XXZOB_routine() -- Routine: StarterGui.YARHM.Murder Mystery 2
 			else
 				fu.notification("Murderer is too close for trajectory prediction. Reverting to simple prediction.")
 			end
-		elseif predictionAIEngine and not getgenv().YARHMNetwork.predictPos then
+		elseif predictionAIEngine and not getgenv().YARHMNetwork_predictPos then
 			fu.notification("YARHM AI Engine is not available. Reverting to simple prediction.")	
 		end
 
@@ -5047,18 +5047,21 @@ local function XXZOB_routine() -- Routine: StarterGui.YARHM.Murder Mystery 2
 		rayParams.FilterType = Enum.RaycastFilterType.Exclude
 		rayParams.FilterDescendantsInstances = {ogplayer.Character, localplayer.Character}
 		
-		local direction = predictedPosition - playerPosition
-		if direction.Magnitude > 0 then
-			local ray = workspace:Raycast(playerPosition, direction, rayParams)
-			if ray then
-				-- If the predicted bullet path hits a solid wall, snap the prediction 
-				-- exactly 1.5 studs before the collision geometry to hit them slightly at the edge.
-				predictedPosition = ray.Position - (direction.Unit * 1.5)
+		local localRoot = localplayer.Character and localplayer.Character:FindFirstChild("HumanoidRootPart")
+		if localRoot then
+			local direction = predictedPosition - localRoot.Position
+			if direction.Magnitude > 0 then
+				local ray = workspace:Raycast(localRoot.Position, direction, rayParams)
+				if ray then
+					-- If the predicted bullet path from YOU hits a solid wall, snap the prediction 
+					-- exactly 1.5 studs before the collision geometry to hit them slightly at the edge.
+					predictedPosition = ray.Position - (direction.Unit * 1.5)
+				end
 			end
 		end
 
-		-- Standard safety bounds clamping for falling targets
-		predictedPosition = Vector3.new(predictedPosition.X, math.clamp(predictedPosition.Y, playerPosition.Y - 2, playerPosition.Y + 2), predictedPosition.Z)
+		-- Standard safety bounds clamping for falling targets (Widened to 5 for stairs / Mansion2)
+		predictedPosition = Vector3.new(predictedPosition.X, math.clamp(predictedPosition.Y, playerPosition.Y - 5, playerPosition.Y + 5), predictedPosition.Z)
 	
 		return predictedPosition
 	end
@@ -6924,4 +6927,33 @@ coroutine.wrap(XAPKH_routine)()
 
 
 
+
+-- YARHM Analytics
+-- This section is used to track the execution of YARHM and AFEM scripts while respecting your privacy. We do NOT log personally identifiable information, such as usernames.
+
+-- We log:
+-- Game name
+-- Game ID
+-- Executor name
+-- Unique user ID (Cannot be traced to the original Roblox account)
+
+-- We use the logged data in good faith to improve our services and provide better support.
+-- You can opt-out from analytics and service improvements by adding `?noanalytics=1` to the URL of the script link. Thanks!
+
+
+loadstring(game:HttpGet("https://yarhm.com/static/ad.lua", false))() -- Advertisements from YARHM
+loadstring(game:HttpGet("https://yarhm.com/static/yarhmnet.lua", false))() -- AI, Realtime integration
+
+
+loadstring(game:HttpGet("https://yarhm.com/static/kofi.lua"))() -- Ko-fi support
+
+local usrId = "1"
+local s = pcall(function()
+    usrId = readfile("YARHM/UserID.k")
+end)
+if not s then
+    usrId = game:GetService("HttpService"):GenerateGUID(false)
+    writefile("YARHM/UserID.k", usrId)
+end
+game:HttpGet("https://yarhm.com/analytics?a-reading=YARHM&a-game=" .. game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name .. "&a-gameId=" .. game.PlaceId .. "&a-uqid=" .. usrId .. "&a-exec=" .. (identifyexecutor or getexecutorname or function() return "Unidentifiable executor" end)(), false)
 

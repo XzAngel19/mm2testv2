@@ -1,4 +1,3 @@
-
 -- Yet Another Random Hub Menu 1.21 by Aetherion
 -- Build Number: 16
 -- Build Date: 2026-03-30T11:44:16Z
@@ -7,14 +6,6 @@
 -- https://mhi.im/tos
 
 
-if not game:IsLoaded() then
-	game:GetService("StarterGui"):SetCore("SendNotification", {
-		Title = "Script loading",
-		Text = "Waiting for the game to finish loading!",
-		Duration = 5
-	})
-	game.Loaded:Wait()
-end
 -- Instances:
 
 local Converted = {
@@ -255,18 +246,18 @@ Converted["_YARHM"].IgnoreGuiInset = true
 Converted["_YARHM"].ScreenInsets = Enum.ScreenInsets.DeviceSafeInsets
 Converted["_YARHM"].ResetOnSpawn = false
 Converted["_YARHM"].ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-Converted["_YARHM"].Name = "YARHM"
+Converted["_YARHM"].Name = "LARP"
 Converted["_YARHM"].Parent = game:GetService("CoreGui")
 
 Converted["_Open"].Font = Enum.Font.Gotham
-Converted["_Open"].Text = "Triple-click this region to open YARHM."
-Converted["_Open"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Open"].Text = "Triple-click this region to open LARP."
+Converted["_Open"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_Open"].TextScaled = true
 Converted["_Open"].TextSize = 14
 Converted["_Open"].TextTransparency = 1
 Converted["_Open"].TextWrapped = true
 Converted["_Open"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_Open"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Open"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_Open"].BackgroundTransparency = 1
 Converted["_Open"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Open"].BorderSizePixel = 0
@@ -286,7 +277,7 @@ Converted["_UIPadding"].PaddingTop = UDim.new(0, 10)
 Converted["_UIPadding"].Parent = Converted["_Open"]
 
 Converted["_DropdownFrameSample"].AnchorPoint = Vector2.new(0.5, 0)
-Converted["_DropdownFrameSample"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_DropdownFrameSample"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_DropdownFrameSample"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_DropdownFrameSample"].BorderSizePixel = 0
 Converted["_DropdownFrameSample"].Size = UDim2.new(0, 108, 0, 239)
@@ -297,20 +288,20 @@ Converted["_DropdownFrameSample"].Parent = Converted["_YARHM"]
 Converted["_UICorner1"].Parent = Converted["_DropdownFrameSample"]
 
 Converted["_UIGradient"].Color = ColorSequence.new{
-	ColorSequenceKeypoint.new(0, Color3.fromRGB(36.00000165402889, 36.00000165402889, 36.00000165402889)),
+	ColorSequenceKeypoint.new(0, Color3.fromRGB(25, 25, 25)),
 	ColorSequenceKeypoint.new(1, Color3.fromRGB(68.00000354647636, 68.00000354647636, 68.00000354647636))
 }
 Converted["_UIGradient"].Rotation = 68
 Converted["_UIGradient"].Parent = Converted["_DropdownFrameSample"]
 
-Converted["_UIStroke"].Color = Color3.fromRGB(255, 255, 255)
+Converted["_UIStroke"].Color = Color3.fromRGB(0, 200, 0)
 Converted["_UIStroke"].Thickness = 2
 Converted["_UIStroke"].Parent = Converted["_DropdownFrameSample"]
 
 Converted["_UIGradient1"].Color = ColorSequence.new{
 	ColorSequenceKeypoint.new(0, Color3.fromRGB(111.00000098347664, 111.00000098347664, 111.00000098347664)),
 	ColorSequenceKeypoint.new(0.6401384472846985, Color3.fromRGB(114.23875719308853, 114.23875719308853, 114.23875719308853)),
-	ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 255, 255))
+	ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 200, 0))
 }
 Converted["_UIGradient1"].Rotation = -107
 Converted["_UIGradient1"].Parent = Converted["_UIStroke"]
@@ -320,7 +311,7 @@ Converted["_ScrollingFrame"].CanvasSize = UDim2.new(0, 0, 0, 0)
 Converted["_ScrollingFrame"].ScrollBarImageColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_ScrollingFrame"].ScrollBarThickness = 0
 Converted["_ScrollingFrame"].Active = true
-Converted["_ScrollingFrame"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_ScrollingFrame"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_ScrollingFrame"].BackgroundTransparency = 1
 Converted["_ScrollingFrame"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_ScrollingFrame"].BorderSizePixel = 0
@@ -333,11 +324,11 @@ Converted["_UIListLayout"].Parent = Converted["_ScrollingFrame"]
 
 Converted["_Sample"].Font = Enum.Font.Unknown
 Converted["_Sample"].Text = "This can fit a lot of text, probably."
-Converted["_Sample"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Sample"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_Sample"].TextScaled = true
 Converted["_Sample"].TextSize = 14
 Converted["_Sample"].TextWrapped = true
-Converted["_Sample"].BackgroundColor3 = Color3.fromRGB(22.000000588595867, 22.000000588595867, 22.000000588595867)
+Converted["_Sample"].BackgroundColor3 = Color3.fromRGB(18, 18, 18)
 Converted["_Sample"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Sample"].BorderSizePixel = 0
 Converted["_Sample"].Size = UDim2.new(1, 0, 0, 35)
@@ -365,11 +356,11 @@ Converted["_themedColor"].Parent = Converted["_DropdownFrameSample"]
 
 Converted["_ListButton"].Font = Enum.Font.Gotham
 Converted["_ListButton"].Text = "Placeholder"
-Converted["_ListButton"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_ListButton"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_ListButton"].TextSize = 14
 Converted["_ListButton"].TextWrapped = true
 Converted["_ListButton"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_ListButton"].BackgroundColor3 = Color3.fromRGB(49.00000087916851, 49.00000087916851, 49.00000087916851)
+Converted["_ListButton"].BackgroundColor3 = Color3.fromRGB(32, 32, 32)
 Converted["_ListButton"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_ListButton"].BorderSizePixel = 0
 Converted["_ListButton"].Position = UDim2.new(0.0450000018, 0, 0.112000003, 0)
@@ -381,7 +372,7 @@ Converted["_ListButton"].Parent = Converted["_YARHM"]
 Converted["_UICorner3"].Parent = Converted["_ListButton"]
 
 Converted["_Notifications"].AnchorPoint = Vector2.new(1, 0.5)
-Converted["_Notifications"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Notifications"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_Notifications"].BackgroundTransparency = 1
 Converted["_Notifications"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Notifications"].BorderSizePixel = 0
@@ -401,7 +392,7 @@ Converted["_UIPadding3"].PaddingLeft = UDim.new(0, 10)
 Converted["_UIPadding3"].Parent = Converted["_Notifications"]
 
 Converted["_Placeholder"].AnchorPoint = Vector2.new(0.5, 0)
-Converted["_Placeholder"].BackgroundColor3 = Color3.fromRGB(31.000001952052116, 31.000001952052116, 31.000001952052116)
+Converted["_Placeholder"].BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 Converted["_Placeholder"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Placeholder"].BorderSizePixel = 0
 Converted["_Placeholder"].Position = UDim2.new(0.0450000018, 0, 0.112000003, 0)
@@ -412,13 +403,13 @@ Converted["_Placeholder"].Parent = Converted["_Notifications"]
 Converted["_UICorner4"].Parent = Converted["_Placeholder"]
 
 Converted["_TextLabel"].Font = Enum.Font.Gotham
-Converted["_TextLabel"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextLabel"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_TextLabel"].TextScaled = true
 Converted["_TextLabel"].TextSize = 14
 Converted["_TextLabel"].TextWrapped = true
 Converted["_TextLabel"].TextXAlignment = Enum.TextXAlignment.Left
 Converted["_TextLabel"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_TextLabel"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextLabel"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_TextLabel"].BackgroundTransparency = 1
 Converted["_TextLabel"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextLabel"].BorderSizePixel = 0
@@ -426,7 +417,7 @@ Converted["_TextLabel"].Position = UDim2.new(0.5, 0, 0.5, 0)
 Converted["_TextLabel"].Size = UDim2.new(0.899999976, 0, 0.800000012, 0)
 Converted["_TextLabel"].Parent = Converted["_Placeholder"]
 
-Converted["_TextBoxPlaceholder"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextBoxPlaceholder"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_TextBoxPlaceholder"].BackgroundTransparency = 1
 Converted["_TextBoxPlaceholder"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextBoxPlaceholder"].BorderSizePixel = 0
@@ -441,11 +432,11 @@ Converted["_UIListLayout2"].HorizontalAlignment = Enum.HorizontalAlignment.Cente
 Converted["_UIListLayout2"].Parent = Converted["_TextBoxPlaceholder"]
 
 Converted["_TextButton"].Font = Enum.Font.Gotham
-Converted["_TextButton"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextButton"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_TextButton"].TextScaled = true
 Converted["_TextButton"].TextSize = 14
 Converted["_TextButton"].TextWrapped = true
-Converted["_TextButton"].BackgroundColor3 = Color3.fromRGB(22.000000588595867, 22.000000588595867, 22.000000588595867)
+Converted["_TextButton"].BackgroundColor3 = Color3.fromRGB(18, 18, 18)
 Converted["_TextButton"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextButton"].BorderSizePixel = 0
 Converted["_TextButton"].Position = UDim2.new(0.292333364, 0, 1.67999995, 0)
@@ -463,10 +454,10 @@ Converted["_UIPadding4"].Parent = Converted["_TextButton"]
 Converted["_TextBox"].Font = Enum.Font.Gotham
 Converted["_TextBox"].PlaceholderText = "Placeholder"
 Converted["_TextBox"].Text = ""
-Converted["_TextBox"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextBox"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_TextBox"].TextSize = 14
 Converted["_TextBox"].TextWrapped = true
-Converted["_TextBox"].BackgroundColor3 = Color3.fromRGB(22.000000588595867, 22.000000588595867, 22.000000588595867)
+Converted["_TextBox"].BackgroundColor3 = Color3.fromRGB(18, 18, 18)
 Converted["_TextBox"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextBox"].BorderSizePixel = 0
 Converted["_TextBox"].Size = UDim2.new(0.800000012, 0, 0, 50)
@@ -476,13 +467,13 @@ Converted["_UICorner6"].Parent = Converted["_TextBox"]
 
 Converted["_FloatingButton"].Font = Enum.Font.Unknown
 Converted["_FloatingButton"].Text = "Shoot into murderer"
-Converted["_FloatingButton"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_FloatingButton"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_FloatingButton"].TextScaled = true
 Converted["_FloatingButton"].TextSize = 14
 Converted["_FloatingButton"].TextWrapped = true
 Converted["_FloatingButton"].AutoButtonColor = false
 Converted["_FloatingButton"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_FloatingButton"].BackgroundColor3 = Color3.fromRGB(31.000000052154064, 31.000000052154064, 31.000000052154064)
+Converted["_FloatingButton"].BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 Converted["_FloatingButton"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_FloatingButton"].BorderSizePixel = 0
 Converted["_FloatingButton"].ClipsDescendants = true
@@ -501,17 +492,17 @@ Converted["_UIPadding5"].Parent = Converted["_FloatingButton"]
 Converted["_UICorner7"].Parent = Converted["_FloatingButton"]
 
 Converted["_UIStroke1"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-Converted["_UIStroke1"].Color = Color3.fromRGB(255, 255, 255)
+Converted["_UIStroke1"].Color = Color3.fromRGB(0, 200, 0)
 Converted["_UIStroke1"].Parent = Converted["_FloatingButton"]
 
 Converted["_Lock"].Font = Enum.Font.Gotham
 Converted["_Lock"].Text = "ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸ÃƒÂ¢Ã¢â€šÂ¬Ã‚ÂÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢"
-Converted["_Lock"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Lock"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_Lock"].TextScaled = true
 Converted["_Lock"].TextSize = 14
 Converted["_Lock"].TextWrapped = true
 Converted["_Lock"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_Lock"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Lock"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_Lock"].BackgroundTransparency = 1
 Converted["_Lock"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Lock"].BorderSizePixel = 0
@@ -525,7 +516,7 @@ Converted["_UIScale"].Scale = 1.0000000116860974e-07
 Converted["_UIScale"].Parent = Converted["_Lock"]
 
 Converted["_Ripple"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_Ripple"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Ripple"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_Ripple"].BackgroundTransparency = 1
 Converted["_Ripple"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Ripple"].BorderSizePixel = 0
@@ -538,7 +529,7 @@ Converted["_UICorner8"].Parent = Converted["_Ripple"]
 
 Converted["_UIScale1"].Parent = Converted["_FloatingButton"]
 
-Converted["_Dropdown"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Dropdown"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_Dropdown"].BackgroundTransparency = 1
 Converted["_Dropdown"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Dropdown"].BorderSizePixel = 0
@@ -549,12 +540,12 @@ Converted["_Dropdown"].Parent = Converted["_YARHM"]
 
 Converted["_TextLabel1"].Font = Enum.Font.Unknown
 Converted["_TextLabel1"].Text = "Loop walkspeed and FOV"
-Converted["_TextLabel1"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextLabel1"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_TextLabel1"].TextScaled = true
 Converted["_TextLabel1"].TextSize = 14
 Converted["_TextLabel1"].TextWrapped = true
 Converted["_TextLabel1"].TextXAlignment = Enum.TextXAlignment.Left
-Converted["_TextLabel1"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextLabel1"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_TextLabel1"].BackgroundTransparency = 1
 Converted["_TextLabel1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextLabel1"].BorderSizePixel = 0
@@ -573,11 +564,11 @@ Converted["_UIPadding6"].Parent = Converted["_Dropdown"]
 
 Converted["_Frame"].Font = Enum.Font.Gotham
 Converted["_Frame"].Text = "Select..."
-Converted["_Frame"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Frame"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_Frame"].TextScaled = true
 Converted["_Frame"].TextWrapped = true
 Converted["_Frame"].Active = false
-Converted["_Frame"].BackgroundColor3 = Color3.fromRGB(31.000001952052116, 31.000001952052116, 31.000001952052116)
+Converted["_Frame"].BackgroundColor3 = Color3.fromRGB(20, 20, 20)
 Converted["_Frame"].BackgroundTransparency = -0.03999999910593033
 Converted["_Frame"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Frame"].BorderSizePixel = 0
@@ -595,7 +586,7 @@ Converted["_UIPadding7"].Parent = Converted["_Frame"]
 Converted["_UICorner9"].Parent = Converted["_Frame"]
 
 Converted["_AddCustomModule"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_AddCustomModule"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_AddCustomModule"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_AddCustomModule"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_AddCustomModule"].BorderSizePixel = 0
 Converted["_AddCustomModule"].ClipsDescendants = true
@@ -607,22 +598,22 @@ Converted["_AddCustomModule"].Parent = Converted["_YARHM"]
 
 Converted["_UICorner10"].Parent = Converted["_AddCustomModule"]
 
-Converted["_UIStroke2"].Color = Color3.fromRGB(255, 255, 255)
+Converted["_UIStroke2"].Color = Color3.fromRGB(0, 200, 0)
 Converted["_UIStroke2"].Thickness = 2
 Converted["_UIStroke2"].Parent = Converted["_AddCustomModule"]
 
 Converted["_UIGradient2"].Color = ColorSequence.new{
 	ColorSequenceKeypoint.new(0, Color3.fromRGB(53.00000064074993, 53.00000064074993, 53.00000064074993)),
-	ColorSequenceKeypoint.new(0.15224914252758026, Color3.fromRGB(50.69031357765198, 50.69031357765198, 50.69031357765198)),
-	ColorSequenceKeypoint.new(0.4723183512687683, Color3.fromRGB(255, 255, 255)),
-	ColorSequenceKeypoint.new(0.7577854990959167, Color3.fromRGB(50.13314567506313, 50.13314567506313, 50.13314567506313)),
+	ColorSequenceKeypoint.new(0.15224914252758026, Color3.fromRGB(33, 33, 33)),
+	ColorSequenceKeypoint.new(0.4723183512687683, Color3.fromRGB(0, 200, 0)),
+	ColorSequenceKeypoint.new(0.7577854990959167, Color3.fromRGB(33, 33, 33)),
 	ColorSequenceKeypoint.new(1, Color3.fromRGB(48.000000938773155, 48.000000938773155, 48.000000938773155))
 }
 Converted["_UIGradient2"].Rotation = 62
 Converted["_UIGradient2"].Parent = Converted["_UIStroke2"]
 
 Converted["_UIGradient3"].Color = ColorSequence.new{
-	ColorSequenceKeypoint.new(0, Color3.fromRGB(36.00000165402889, 36.00000165402889, 36.00000165402889)),
+	ColorSequenceKeypoint.new(0, Color3.fromRGB(25, 25, 25)),
 	ColorSequenceKeypoint.new(1, Color3.fromRGB(68.00000354647636, 68.00000354647636, 68.00000354647636))
 }
 Converted["_UIGradient3"].Rotation = 68
@@ -632,12 +623,12 @@ Converted["_UIScale2"].Parent = Converted["_AddCustomModule"]
 
 Converted["_TextLabel2"].Font = Enum.Font.Gotham
 Converted["_TextLabel2"].Text = "Add a module"
-Converted["_TextLabel2"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextLabel2"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_TextLabel2"].TextScaled = true
 Converted["_TextLabel2"].TextSize = 14
 Converted["_TextLabel2"].TextWrapped = true
 Converted["_TextLabel2"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_TextLabel2"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextLabel2"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_TextLabel2"].BackgroundTransparency = 1
 Converted["_TextLabel2"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextLabel2"].BorderSizePixel = 0
@@ -649,12 +640,12 @@ Converted["_TextBox1"].ClearTextOnFocus = false
 Converted["_TextBox1"].Font = Enum.Font.Gotham
 Converted["_TextBox1"].PlaceholderText = "Custom module link"
 Converted["_TextBox1"].Text = ""
-Converted["_TextBox1"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextBox1"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_TextBox1"].TextScaled = true
 Converted["_TextBox1"].TextSize = 14
 Converted["_TextBox1"].TextWrapped = true
 Converted["_TextBox1"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_TextBox1"].BackgroundColor3 = Color3.fromRGB(22.000000588595867, 22.000000588595867, 22.000000588595867)
+Converted["_TextBox1"].BackgroundColor3 = Color3.fromRGB(18, 18, 18)
 Converted["_TextBox1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextBox1"].BorderSizePixel = 0
 Converted["_TextBox1"].Position = UDim2.new(0.499648541, 0, 0.500059664, 0)
@@ -671,12 +662,12 @@ Converted["_UIPadding8"].Parent = Converted["_TextBox1"]
 
 Converted["_TextLabel3"].Font = Enum.Font.GothamBold
 Converted["_TextLabel3"].Text = "ONLY ADD MODULES YOU TRUST!"
-Converted["_TextLabel3"].TextColor3 = Color3.fromRGB(255, 0, 0)
+Converted["_TextLabel3"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_TextLabel3"].TextScaled = true
 Converted["_TextLabel3"].TextSize = 14
 Converted["_TextLabel3"].TextWrapped = true
 Converted["_TextLabel3"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_TextLabel3"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextLabel3"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_TextLabel3"].BackgroundTransparency = 1
 Converted["_TextLabel3"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextLabel3"].BorderSizePixel = 0
@@ -686,12 +677,12 @@ Converted["_TextLabel3"].Parent = Converted["_AddCustomModule"]
 
 Converted["_Add"].Font = Enum.Font.Gotham
 Converted["_Add"].Text = "Add"
-Converted["_Add"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Add"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_Add"].TextScaled = true
 Converted["_Add"].TextSize = 14
 Converted["_Add"].TextWrapped = true
 Converted["_Add"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_Add"].BackgroundColor3 = Color3.fromRGB(50.00000461935997, 50.00000461935997, 50.00000461935997)
+Converted["_Add"].BackgroundColor3 = Color3.fromRGB(33, 33, 33)
 Converted["_Add"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Add"].BorderSizePixel = 0
 Converted["_Add"].Position = UDim2.new(0.108492024, 0, 0.927298486, 0)
@@ -708,17 +699,17 @@ Converted["_UIPadding9"].PaddingTop = UDim.new(0, 5)
 Converted["_UIPadding9"].Parent = Converted["_Add"]
 
 Converted["_UIStroke3"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-Converted["_UIStroke3"].Color = Color3.fromRGB(255, 255, 255)
+Converted["_UIStroke3"].Color = Color3.fromRGB(0, 200, 0)
 Converted["_UIStroke3"].Parent = Converted["_Add"]
 
 Converted["_Cancel"].Font = Enum.Font.Gotham
 Converted["_Cancel"].Text = "Cancel"
-Converted["_Cancel"].TextColor3 = Color3.fromRGB(255, 0, 0)
+Converted["_Cancel"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_Cancel"].TextScaled = true
 Converted["_Cancel"].TextSize = 14
 Converted["_Cancel"].TextWrapped = true
 Converted["_Cancel"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_Cancel"].BackgroundColor3 = Color3.fromRGB(50.00000461935997, 50.00000461935997, 50.00000461935997)
+Converted["_Cancel"].BackgroundColor3 = Color3.fromRGB(33, 33, 33)
 Converted["_Cancel"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Cancel"].BorderSizePixel = 0
 Converted["_Cancel"].Position = UDim2.new(0.899875283, 0, 0.931029797, 0)
@@ -743,7 +734,7 @@ Converted["_themedColor1"].Name = "themedColor"
 Converted["_themedColor1"].Parent = Converted["_AddCustomModule"]
 
 Converted["_Menu"].AnchorPoint = Vector2.new(0.5, 0)
-Converted["_Menu"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Menu"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_Menu"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Menu"].BorderSizePixel = 0
 Converted["_Menu"].Position = UDim2.new(0.5, 0, 0.0500000007, 0)
@@ -754,30 +745,30 @@ Converted["_Menu"].Parent = Converted["_YARHM"]
 Converted["_UICorner14"].CornerRadius = UDim.new(0, 16)
 Converted["_UICorner14"].Parent = Converted["_Menu"]
 
-Converted["_UIStroke5"].Color = Color3.fromRGB(255, 255, 255)
+Converted["_UIStroke5"].Color = Color3.fromRGB(0, 200, 0)
 Converted["_UIStroke5"].Thickness = 2
 Converted["_UIStroke5"].Parent = Converted["_Menu"]
 
 Converted["_UIGradient4"].Color = ColorSequence.new{
 	ColorSequenceKeypoint.new(0, Color3.fromRGB(53.00000064074993, 53.00000064074993, 53.00000064074993)),
-	ColorSequenceKeypoint.new(0.15224914252758026, Color3.fromRGB(50.69031357765198, 50.69031357765198, 50.69031357765198)),
-	ColorSequenceKeypoint.new(0.4723183512687683, Color3.fromRGB(255, 0, 4.000000236555934)),
-	ColorSequenceKeypoint.new(0.7577854990959167, Color3.fromRGB(50.13314567506313, 50.13314567506313, 50.13314567506313)),
+	ColorSequenceKeypoint.new(0.15224914252758026, Color3.fromRGB(33, 33, 33)),
+	ColorSequenceKeypoint.new(0.4723183512687683, Color3.fromRGB(0, 200, 0)),
+	ColorSequenceKeypoint.new(0.7577854990959167, Color3.fromRGB(33, 33, 33)),
 	ColorSequenceKeypoint.new(1, Color3.fromRGB(48.000000938773155, 48.000000938773155, 48.000000938773155))
 }
 Converted["_UIGradient4"].Rotation = 180
 Converted["_UIGradient4"].Parent = Converted["_UIStroke5"]
 
 Converted["_HubCredits"].Font = Enum.Font.GothamBold
-Converted["_HubCredits"].Text = "made and open sourced by imperial"
-Converted["_HubCredits"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_HubCredits"].Text = "made by the team"
+Converted["_HubCredits"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_HubCredits"].TextScaled = true
 Converted["_HubCredits"].TextSize = 14
 Converted["_HubCredits"].TextTransparency = 0.699999988079071
 Converted["_HubCredits"].TextWrapped = true
 Converted["_HubCredits"].TextXAlignment = Enum.TextXAlignment.Right
 Converted["_HubCredits"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_HubCredits"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_HubCredits"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_HubCredits"].BackgroundTransparency = 1
 Converted["_HubCredits"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_HubCredits"].BorderSizePixel = 0
@@ -788,13 +779,13 @@ Converted["_HubCredits"].Name = "HubCredits"
 Converted["_HubCredits"].Parent = Converted["_Menu"]
 
 Converted["_HubDesc"].Font = Enum.Font.GothamBold
-Converted["_HubDesc"].Text = "yet another random hub menu"
-Converted["_HubDesc"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_HubDesc"].Text = "larp hub menu"
+Converted["_HubDesc"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_HubDesc"].TextSize = 14
 Converted["_HubDesc"].TextWrapped = true
 Converted["_HubDesc"].TextXAlignment = Enum.TextXAlignment.Right
 Converted["_HubDesc"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_HubDesc"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_HubDesc"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_HubDesc"].BackgroundTransparency = 1
 Converted["_HubDesc"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_HubDesc"].BorderSizePixel = 0
@@ -805,14 +796,14 @@ Converted["_HubDesc"].Parent = Converted["_Menu"]
 
 Converted["_HubName"].Font = Enum.Font.GothamBold
 Converted["_HubName"].RichText = true
-Converted["_HubName"].Text = "YARHM "
-Converted["_HubName"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_HubName"].Text = "LARP "
+Converted["_HubName"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_HubName"].TextScaled = true
 Converted["_HubName"].TextSize = 14
 Converted["_HubName"].TextWrapped = true
 Converted["_HubName"].TextXAlignment = Enum.TextXAlignment.Left
 Converted["_HubName"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_HubName"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_HubName"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_HubName"].BackgroundTransparency = 1
 Converted["_HubName"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_HubName"].BorderSizePixel = 0
@@ -823,7 +814,7 @@ Converted["_HubName"].Parent = Converted["_Menu"]
 
 Converted["_CanvasGroup"].GroupTransparency = 1
 Converted["_CanvasGroup"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_CanvasGroup"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_CanvasGroup"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_CanvasGroup"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_CanvasGroup"].BorderSizePixel = 0
 Converted["_CanvasGroup"].Interactable = false
@@ -839,7 +830,7 @@ Converted["_UICorner15"].Parent = Converted["_CanvasGroup"]
 Converted["_ImageLabel"].Image = "rbxassetid://17864987433"
 -- Converted["_ImageLabel"].ImageContent = Content{SourceType=Uri, Uri=rbxassetid://17864987433}
 Converted["_ImageLabel"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_ImageLabel"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_ImageLabel"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_ImageLabel"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_ImageLabel"].BorderSizePixel = 0
 Converted["_ImageLabel"].Position = UDim2.new(0.5, 0, 0.5, 0)
@@ -853,7 +844,7 @@ Converted["_Opener"].Text = ""
 Converted["_Opener"].TextColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Opener"].TextSize = 14
 Converted["_Opener"].AutoButtonColor = false
-Converted["_Opener"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Opener"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_Opener"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Opener"].BorderSizePixel = 0
 Converted["_Opener"].Size = UDim2.new(1, 0, 1, 0)
@@ -861,12 +852,12 @@ Converted["_Opener"].Name = "Opener"
 Converted["_Opener"].Parent = Converted["_CanvasGroup"]
 
 Converted["_TextLabel4"].Font = Enum.Font.GothamBold
-Converted["_TextLabel4"].Text = "Yet Another Random Hub Menu"
+Converted["_TextLabel4"].Text = "LARP Hub Menu"
 Converted["_TextLabel4"].TextColor3 = Color3.fromRGB(255, 69.00000348687172, 67.00000360608101)
 Converted["_TextLabel4"].TextScaled = true
 Converted["_TextLabel4"].TextSize = 14
 Converted["_TextLabel4"].TextWrapped = true
-Converted["_TextLabel4"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextLabel4"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_TextLabel4"].BackgroundTransparency = 1
 Converted["_TextLabel4"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextLabel4"].BorderSizePixel = 0
@@ -877,7 +868,7 @@ Converted["_TextLabel4"].Parent = Converted["_CanvasGroup"]
 
 Converted["_CloseArea"].Text = ""
 Converted["_CloseArea"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_CloseArea"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_CloseArea"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_CloseArea"].BackgroundTransparency = 1
 Converted["_CloseArea"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_CloseArea"].BorderSizePixel = 0
@@ -887,7 +878,7 @@ Converted["_CloseArea"].Name = "CloseArea"
 Converted["_CloseArea"].Parent = Converted["_Menu"]
 
 Converted["_Frame1"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_Frame1"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Frame1"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_Frame1"].BackgroundTransparency = 0.6499999761581421
 Converted["_Frame1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Frame1"].BorderSizePixel = 0
@@ -904,7 +895,7 @@ Converted["_themedColor2"].Parent = Converted["_Frame1"]
 
 Converted["_TextLabel5"].Font = Enum.Font.Gotham
 Converted["_TextLabel5"].Text = "Tap here to minimize."
-Converted["_TextLabel5"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextLabel5"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_TextLabel5"].TextSize = 15
 Converted["_TextLabel5"].TextWrapped = true
 Converted["_TextLabel5"].AnchorPoint = Vector2.new(0.5, 0.5)
@@ -926,7 +917,7 @@ Converted["_themedColor3"].Name = "themedColor"
 Converted["_themedColor3"].Parent = Converted["_Menu"]
 
 Converted["_UIGradient5"].Color = ColorSequence.new{
-	ColorSequenceKeypoint.new(0, Color3.fromRGB(36.00000165402889, 36.00000165402889, 36.00000165402889)),
+	ColorSequenceKeypoint.new(0, Color3.fromRGB(25, 25, 25)),
 	ColorSequenceKeypoint.new(1, Color3.fromRGB(68.00000354647636, 68.00000354647636, 68.00000354647636))
 }
 Converted["_UIGradient5"].Offset = Vector2.new(0, 0.5)
@@ -934,7 +925,7 @@ Converted["_UIGradient5"].Rotation = 68
 Converted["_UIGradient5"].Parent = Converted["_Menu"]
 
 Converted["_Area"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_Area"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Area"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_Area"].BackgroundTransparency = 1
 Converted["_Area"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Area"].BorderSizePixel = 0
@@ -947,7 +938,7 @@ Converted["_Area1"].AutomaticCanvasSize = Enum.AutomaticSize.Y
 Converted["_Area1"].CanvasSize = UDim2.new(0, 0, 0, 0)
 Converted["_Area1"].ScrollBarThickness = 0
 Converted["_Area1"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_Area1"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Area1"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_Area1"].BackgroundTransparency = 1
 Converted["_Area1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Area1"].BorderSizePixel = 0
@@ -959,10 +950,10 @@ Converted["_Area1"].Parent = Converted["_Area"]
 
 Converted["_TextLabel6"].Font = Enum.Font.GothamBold
 Converted["_TextLabel6"].Text = "3 years of keyless! ÃƒÆ’Ã‚Â°Ãƒâ€¦Ã‚Â¸Ãƒâ€¦Ã‚Â½ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â°"
-Converted["_TextLabel6"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextLabel6"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_TextLabel6"].TextSize = 14
 Converted["_TextLabel6"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_TextLabel6"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextLabel6"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_TextLabel6"].BackgroundTransparency = 1
 Converted["_TextLabel6"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextLabel6"].BorderSizePixel = 0
@@ -971,13 +962,13 @@ Converted["_TextLabel6"].Size = UDim2.new(0, 200, 0, 50)
 Converted["_TextLabel6"].Parent = Converted["_Area1"]
 
 Converted["_TextLabel7"].Font = Enum.Font.GothamBold
-Converted["_TextLabel7"].Text = "YARHM"
-Converted["_TextLabel7"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextLabel7"].Text = "LARP"
+Converted["_TextLabel7"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_TextLabel7"].TextScaled = true
 Converted["_TextLabel7"].TextSize = 14
 Converted["_TextLabel7"].TextWrapped = true
 Converted["_TextLabel7"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_TextLabel7"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextLabel7"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_TextLabel7"].BackgroundTransparency = 1
 Converted["_TextLabel7"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextLabel7"].BorderSizePixel = 0
@@ -988,7 +979,7 @@ Converted["_TextLabel7"].Parent = Converted["_Area1"]
 Converted["_UICorner18"].Parent = Converted["_Area"]
 
 Converted["_List"].AnchorPoint = Vector2.new(0, 0.5)
-Converted["_List"].BackgroundColor3 = Color3.fromRGB(22.000000588595867, 22.000000588595867, 22.000000588595867)
+Converted["_List"].BackgroundColor3 = Color3.fromRGB(18, 18, 18)
 Converted["_List"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_List"].BorderSizePixel = 0
 Converted["_List"].Position = UDim2.new(0, 0, 0.606999993, 0)
@@ -1005,7 +996,7 @@ Converted["_ScrollingFrame1"].ScrollBarThickness = 2
 Converted["_ScrollingFrame1"].VerticalScrollBarPosition = Enum.VerticalScrollBarPosition.Left
 Converted["_ScrollingFrame1"].Active = true
 Converted["_ScrollingFrame1"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_ScrollingFrame1"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_ScrollingFrame1"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_ScrollingFrame1"].BackgroundTransparency = 1
 Converted["_ScrollingFrame1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_ScrollingFrame1"].BorderSizePixel = 0
@@ -1027,26 +1018,26 @@ Converted["_UIPadding12"].PaddingRight = UDim.new(0, 10)
 Converted["_UIPadding12"].PaddingTop = UDim.new(0, 10)
 Converted["_UIPadding12"].Parent = Converted["_List"]
 
-Converted["_UIStroke6"].Color = Color3.fromRGB(255, 255, 255)
+Converted["_UIStroke6"].Color = Color3.fromRGB(0, 200, 0)
 Converted["_UIStroke6"].Thickness = 0
 Converted["_UIStroke6"].Parent = Converted["_List"]
 
 Converted["_UIGradient6"].Color = ColorSequence.new{
 	ColorSequenceKeypoint.new(0, Color3.fromRGB(111.00000098347664, 111.00000098347664, 111.00000098347664)),
 	ColorSequenceKeypoint.new(0.6401384472846985, Color3.fromRGB(114.23875719308853, 114.23875719308853, 114.23875719308853)),
-	ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 255, 255))
+	ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 200, 0))
 }
 Converted["_UIGradient6"].Rotation = -44
 Converted["_UIGradient6"].Parent = Converted["_UIStroke6"]
 
 Converted["_AddCustomModule1"].Font = Enum.Font.Gotham
 Converted["_AddCustomModule1"].Text = "+"
-Converted["_AddCustomModule1"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_AddCustomModule1"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_AddCustomModule1"].TextScaled = true
 Converted["_AddCustomModule1"].TextSize = 14
 Converted["_AddCustomModule1"].TextWrapped = true
 Converted["_AddCustomModule1"].AnchorPoint = Vector2.new(1, 1)
-Converted["_AddCustomModule1"].BackgroundColor3 = Color3.fromRGB(50.00000461935997, 50.00000461935997, 50.00000461935997)
+Converted["_AddCustomModule1"].BackgroundColor3 = Color3.fromRGB(33, 33, 33)
 Converted["_AddCustomModule1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_AddCustomModule1"].BorderSizePixel = 0
 Converted["_AddCustomModule1"].Position = UDim2.new(1, 0, 1, 0)
@@ -1061,7 +1052,7 @@ Converted["_UIPadding13"].PaddingLeft = UDim.new(0, 1)
 Converted["_UIPadding13"].Parent = Converted["_AddCustomModule1"]
 
 Converted["_UIStroke7"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-Converted["_UIStroke7"].Color = Color3.fromRGB(255, 255, 255)
+Converted["_UIStroke7"].Color = Color3.fromRGB(0, 200, 0)
 Converted["_UIStroke7"].Parent = Converted["_AddCustomModule1"]
 
 Converted["_themedColor4"].Value = "secondaryColor"
@@ -1078,7 +1069,7 @@ Converted["_themedColor6"].Parent = Converted["_List"]
 
 Converted["_UIScale3"].Parent = Converted["_Menu"]
 
-Converted["_Stub"].BackgroundColor3 = Color3.fromRGB(22.000000588595867, 22.000000588595867, 22.000000588595867)
+Converted["_Stub"].BackgroundColor3 = Color3.fromRGB(18, 18, 18)
 Converted["_Stub"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Stub"].BorderSizePixel = 0
 Converted["_Stub"].Position = UDim2.new(0, 0, 0.214000002, 0)
@@ -1092,7 +1083,7 @@ Converted["_themedColor7"].Name = "themedColor"
 Converted["_themedColor7"].Parent = Converted["_Stub"]
 
 Converted["_Stub1"].AnchorPoint = Vector2.new(1, 1)
-Converted["_Stub1"].BackgroundColor3 = Color3.fromRGB(22.000000588595867, 22.000000588595867, 22.000000588595867)
+Converted["_Stub1"].BackgroundColor3 = Color3.fromRGB(18, 18, 18)
 Converted["_Stub1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Stub1"].BorderSizePixel = 0
 Converted["_Stub1"].Position = UDim2.new(0.315192729, 0, 1, 0)
@@ -1105,7 +1096,7 @@ Converted["_themedColor8"].Value = "primaryColor"
 Converted["_themedColor8"].Name = "themedColor"
 Converted["_themedColor8"].Parent = Converted["_Stub1"]
 
-Converted["_Toggle"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Toggle"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_Toggle"].BackgroundTransparency = 1
 Converted["_Toggle"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Toggle"].BorderSizePixel = 0
@@ -1116,12 +1107,12 @@ Converted["_Toggle"].Parent = Converted["_YARHM"]
 
 Converted["_TextLabel8"].Font = Enum.Font.Unknown
 Converted["_TextLabel8"].Text = "Loop walkspeed and FOV"
-Converted["_TextLabel8"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextLabel8"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_TextLabel8"].TextScaled = true
 Converted["_TextLabel8"].TextSize = 14
 Converted["_TextLabel8"].TextWrapped = true
 Converted["_TextLabel8"].TextXAlignment = Enum.TextXAlignment.Left
-Converted["_TextLabel8"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextLabel8"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_TextLabel8"].BackgroundTransparency = 1
 Converted["_TextLabel8"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextLabel8"].BorderSizePixel = 0
@@ -1135,7 +1126,7 @@ Converted["_UIListLayout5"].SortOrder = Enum.SortOrder.LayoutOrder
 Converted["_UIListLayout5"].VerticalAlignment = Enum.VerticalAlignment.Center
 Converted["_UIListLayout5"].Parent = Converted["_Toggle"]
 
-Converted["_Frame2"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Frame2"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_Frame2"].BackgroundTransparency = 1
 Converted["_Frame2"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Frame2"].BorderSizePixel = 0
@@ -1143,7 +1134,7 @@ Converted["_Frame2"].Size = UDim2.new(0.200000003, 0, 1, 0)
 Converted["_Frame2"].Parent = Converted["_Toggle"]
 
 Converted["_Frame3"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_Frame3"].BackgroundColor3 = Color3.fromRGB(46.000001057982445, 46.000001057982445, 46.000001057982445)
+Converted["_Frame3"].BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 Converted["_Frame3"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Frame3"].BorderSizePixel = 0
 Converted["_Frame3"].Position = UDim2.new(0.5, 0, 0.5, 0)
@@ -1158,7 +1149,7 @@ Converted["_Toggler"].Text = ""
 Converted["_Toggler"].TextColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Toggler"].TextSize = 14
 Converted["_Toggler"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_Toggler"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Toggler"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_Toggler"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Toggler"].BorderSizePixel = 0
 Converted["_Toggler"].Position = UDim2.new(0.300000012, 0, 0.5, 0)
@@ -1170,10 +1161,10 @@ Converted["_UICorner22"].CornerRadius = UDim.new(1, 0)
 Converted["_UICorner22"].Parent = Converted["_Toggler"]
 
 Converted["_ImageLabel1"].Image = "rbxassetid://10002373478"
-Converted["_ImageLabel1"].ImageColor3 = Color3.fromRGB(255, 0, 4.000000236555934)
+Converted["_ImageLabel1"].ImageColor3 = Color3.fromRGB(0, 200, 0)
 -- Converted["_ImageLabel1"].ImageContent = Content{SourceType=Uri, Uri=rbxassetid://10002373478}
 Converted["_ImageLabel1"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_ImageLabel1"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_ImageLabel1"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_ImageLabel1"].BackgroundTransparency = 1
 Converted["_ImageLabel1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_ImageLabel1"].BorderSizePixel = 0
@@ -1188,7 +1179,7 @@ Converted["_Modules"].Name = "Modules"
 Converted["_Modules"].Parent = Converted["_YARHM"]
 
 Converted["_NotificationSample"].AnchorPoint = Vector2.new(0.5, 0)
-Converted["_NotificationSample"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_NotificationSample"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_NotificationSample"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_NotificationSample"].BorderSizePixel = 0
 Converted["_NotificationSample"].ClipsDescendants = true
@@ -1202,13 +1193,13 @@ Converted["_NotificationSample"].Parent = Converted["_YARHM"]
 Converted["_UICorner23"].CornerRadius = UDim.new(0, 10)
 Converted["_UICorner23"].Parent = Converted["_NotificationSample"]
 
-Converted["_UIStroke8"].Color = Color3.fromRGB(255, 255, 255)
+Converted["_UIStroke8"].Color = Color3.fromRGB(0, 200, 0)
 Converted["_UIStroke8"].Thickness = 1.600000023841858
 Converted["_UIStroke8"].Parent = Converted["_NotificationSample"]
 
 Converted["_UIGradient7"].Color = ColorSequence.new{
-	ColorSequenceKeypoint.new(0, Color3.fromRGB(46.000001057982445, 46.000001057982445, 46.000001057982445)),
-	ColorSequenceKeypoint.new(1, Color3.fromRGB(12.000000234693289, 12.000000234693289, 12.000000234693289))
+	ColorSequenceKeypoint.new(0, Color3.fromRGB(30, 30, 30)),
+	ColorSequenceKeypoint.new(1, Color3.fromRGB(12, 12, 12))
 }
 Converted["_UIGradient7"].Parent = Converted["_NotificationSample"]
 
@@ -1216,7 +1207,7 @@ Converted["_ImageLabel2"].Image = "rbxassetid://11780939099"
 -- Converted["_ImageLabel2"].ImageContent = Content{SourceType=Uri, Uri=rbxassetid://11780939099}
 Converted["_ImageLabel2"].ScaleType = Enum.ScaleType.Fit
 Converted["_ImageLabel2"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_ImageLabel2"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_ImageLabel2"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_ImageLabel2"].BackgroundTransparency = 1
 Converted["_ImageLabel2"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_ImageLabel2"].BorderSizePixel = 0
@@ -1225,13 +1216,13 @@ Converted["_ImageLabel2"].Size = UDim2.new(0.0799999982, 0, 0.639999986, 0)
 Converted["_ImageLabel2"].Parent = Converted["_NotificationSample"]
 
 Converted["_TextLabel9"].Font = Enum.Font.Gotham
-Converted["_TextLabel9"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextLabel9"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_TextLabel9"].TextScaled = true
 Converted["_TextLabel9"].TextSize = 14
 Converted["_TextLabel9"].TextWrapped = true
 Converted["_TextLabel9"].TextXAlignment = Enum.TextXAlignment.Left
 Converted["_TextLabel9"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_TextLabel9"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextLabel9"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_TextLabel9"].BackgroundTransparency = 1
 Converted["_TextLabel9"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextLabel9"].BorderSizePixel = 0
@@ -1247,7 +1238,7 @@ Converted["_Close"].Image = "rbxassetid://10002373478"
 Converted["_Close"].ScaleType = Enum.ScaleType.Fit
 Converted["_Close"].Active = false
 Converted["_Close"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_Close"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Close"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_Close"].BackgroundTransparency = 1
 Converted["_Close"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Close"].BorderSizePixel = 0
@@ -1259,7 +1250,7 @@ Converted["_Close"].Parent = Converted["_NotificationSample"]
 
 Converted["_UICorner24"].Parent = Converted["_Close"]
 
-Converted["_UIStroke9"].Color = Color3.fromRGB(255, 255, 255)
+Converted["_UIStroke9"].Color = Color3.fromRGB(0, 200, 0)
 Converted["_UIStroke9"].Parent = Converted["_Close"]
 
 Converted["_UIScale4"].Scale = 0.800000011920929
@@ -1270,7 +1261,7 @@ Converted["_themedColor9"].Name = "themedColor"
 Converted["_themedColor9"].Parent = Converted["_NotificationSample"]
 
 Converted["_Dialog"].AnchorPoint = Vector2.new(0.5, 1)
-Converted["_Dialog"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Dialog"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_Dialog"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Dialog"].BorderSizePixel = 0
 Converted["_Dialog"].Position = UDim2.new(0.499000013, 0, 0.984000027, 0)
@@ -1283,7 +1274,7 @@ Converted["_Dialog"].Parent = Converted["_YARHM"]
 Converted["_UICorner25"].Parent = Converted["_Dialog"]
 
 Converted["_UIGradient8"].Color = ColorSequence.new{
-	ColorSequenceKeypoint.new(0, Color3.fromRGB(36.00000165402889, 36.00000165402889, 36.00000165402889)),
+	ColorSequenceKeypoint.new(0, Color3.fromRGB(25, 25, 25)),
 	ColorSequenceKeypoint.new(1, Color3.fromRGB(68.00000354647636, 68.00000354647636, 68.00000354647636))
 }
 Converted["_UIGradient8"].Rotation = -133
@@ -1295,25 +1286,25 @@ Converted["_UIPadding15"].PaddingRight = UDim.new(0, 15)
 Converted["_UIPadding15"].PaddingTop = UDim.new(0, 15)
 Converted["_UIPadding15"].Parent = Converted["_Dialog"]
 
-Converted["_UIStroke10"].Color = Color3.fromRGB(255, 255, 255)
+Converted["_UIStroke10"].Color = Color3.fromRGB(0, 200, 0)
 Converted["_UIStroke10"].Thickness = 2
 Converted["_UIStroke10"].Parent = Converted["_Dialog"]
 
 Converted["_UIGradient9"].Color = ColorSequence.new{
 	ColorSequenceKeypoint.new(0, Color3.fromRGB(111.00000098347664, 111.00000098347664, 111.00000098347664)),
 	ColorSequenceKeypoint.new(0.6401384472846985, Color3.fromRGB(114.23875719308853, 114.23875719308853, 114.23875719308853)),
-	ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 255, 255))
+	ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 200, 0))
 }
 Converted["_UIGradient9"].Rotation = -107
 Converted["_UIGradient9"].Parent = Converted["_UIStroke10"]
 
 Converted["_DialogTitle"].Font = Enum.Font.Unknown
-Converted["_DialogTitle"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_DialogTitle"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_DialogTitle"].TextScaled = true
 Converted["_DialogTitle"].TextSize = 14
 Converted["_DialogTitle"].TextWrapped = true
 Converted["_DialogTitle"].TextXAlignment = Enum.TextXAlignment.Right
-Converted["_DialogTitle"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_DialogTitle"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_DialogTitle"].BackgroundTransparency = 1
 Converted["_DialogTitle"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_DialogTitle"].BorderSizePixel = 0
@@ -1326,13 +1317,13 @@ Converted["_UIListLayout6"].SortOrder = Enum.SortOrder.LayoutOrder
 Converted["_UIListLayout6"].Parent = Converted["_Dialog"]
 
 Converted["_DialogDesc"].Font = Enum.Font.Unknown
-Converted["_DialogDesc"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_DialogDesc"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_DialogDesc"].TextScaled = true
 Converted["_DialogDesc"].TextSize = 14
 Converted["_DialogDesc"].TextWrapped = true
 Converted["_DialogDesc"].TextXAlignment = Enum.TextXAlignment.Left
 Converted["_DialogDesc"].TextYAlignment = Enum.TextYAlignment.Top
-Converted["_DialogDesc"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_DialogDesc"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_DialogDesc"].BackgroundTransparency = 1
 Converted["_DialogDesc"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_DialogDesc"].BorderSizePixel = 0
@@ -1345,7 +1336,7 @@ Converted["_UITextSizeConstraint1"].MaxTextSize = 20
 Converted["_UITextSizeConstraint1"].MinTextSize = 5
 Converted["_UITextSizeConstraint1"].Parent = Converted["_DialogDesc"]
 
-Converted["_Options"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Options"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_Options"].BackgroundTransparency = 1
 Converted["_Options"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Options"].BorderSizePixel = 0
@@ -1363,11 +1354,11 @@ Converted["_UIListLayout7"].Parent = Converted["_Options"]
 Converted["_OptionPlaceholder"].Font = Enum.Font.GothamBold
 Converted["_OptionPlaceholder"].RichText = true
 Converted["_OptionPlaceholder"].Text = "aaaaaaaaaaa"
-Converted["_OptionPlaceholder"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_OptionPlaceholder"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_OptionPlaceholder"].TextScaled = true
 Converted["_OptionPlaceholder"].TextSize = 100
 Converted["_OptionPlaceholder"].TextWrapped = true
-Converted["_OptionPlaceholder"].BackgroundColor3 = Color3.fromRGB(36.00000165402889, 36.00000165402889, 36.00000165402889)
+Converted["_OptionPlaceholder"].BackgroundColor3 = Color3.fromRGB(25, 25, 25)
 Converted["_OptionPlaceholder"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_OptionPlaceholder"].BorderSizePixel = 0
 Converted["_OptionPlaceholder"].Size = UDim2.new(0.532000005, -5, 1.00899994, 0)
@@ -1384,14 +1375,14 @@ Converted["_UIPadding16"].Parent = Converted["_OptionPlaceholder"]
 Converted["_UICorner26"].Parent = Converted["_OptionPlaceholder"]
 
 Converted["_UIStroke11"].ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-Converted["_UIStroke11"].Color = Color3.fromRGB(255, 255, 255)
+Converted["_UIStroke11"].Color = Color3.fromRGB(0, 200, 0)
 Converted["_UIStroke11"].Thickness = 2
 Converted["_UIStroke11"].Parent = Converted["_OptionPlaceholder"]
 
 Converted["_UIGradient10"].Color = ColorSequence.new{
 	ColorSequenceKeypoint.new(0, Color3.fromRGB(111.00000098347664, 111.00000098347664, 111.00000098347664)),
 	ColorSequenceKeypoint.new(0.6401384472846985, Color3.fromRGB(114.23875719308853, 114.23875719308853, 114.23875719308853)),
-	ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 255, 255))
+	ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 200, 0))
 }
 Converted["_UIGradient10"].Rotation = -107
 Converted["_UIGradient10"].Parent = Converted["_UIStroke11"]
@@ -1409,7 +1400,7 @@ Converted["_themedColor11"].Value = "backgroundColorCSQ"
 Converted["_themedColor11"].Name = "themedColor"
 Converted["_themedColor11"].Parent = Converted["_Dialog"]
 
-Converted["_Range"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Range"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_Range"].BackgroundTransparency = 1
 Converted["_Range"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Range"].BorderSizePixel = 0
@@ -1420,12 +1411,12 @@ Converted["_Range"].Parent = Converted["_YARHM"]
 
 Converted["_TextLabel10"].Font = Enum.Font.Unknown
 Converted["_TextLabel10"].Text = "something something idk lol"
-Converted["_TextLabel10"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextLabel10"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_TextLabel10"].TextScaled = true
 Converted["_TextLabel10"].TextSize = 58
 Converted["_TextLabel10"].TextWrapped = true
 Converted["_TextLabel10"].TextXAlignment = Enum.TextXAlignment.Left
-Converted["_TextLabel10"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TextLabel10"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_TextLabel10"].BackgroundTransparency = 1
 Converted["_TextLabel10"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TextLabel10"].BorderSizePixel = 0
@@ -1444,7 +1435,7 @@ Converted["_UIListLayout8"].Parent = Converted["_Range"]
 
 Converted["_UIPadding17"].Parent = Converted["_Range"]
 
-Converted["_Frame4"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Frame4"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_Frame4"].BackgroundTransparency = 1
 Converted["_Frame4"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Frame4"].BorderSizePixel = 0
@@ -1460,7 +1451,7 @@ Converted["_UIPadding18"].Parent = Converted["_Frame4"]
 Converted["_UICorner27"].Parent = Converted["_Frame4"]
 
 Converted["_Track"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_Track"].BackgroundColor3 = Color3.fromRGB(22.000000588595867, 22.000000588595867, 22.000000588595867)
+Converted["_Track"].BackgroundColor3 = Color3.fromRGB(18, 18, 18)
 Converted["_Track"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Track"].BorderSizePixel = 0
 Converted["_Track"].Position = UDim2.new(0.5, 0, 0.5, 0)
@@ -1476,7 +1467,7 @@ Converted["_Ball"].Text = ""
 Converted["_Ball"].TextColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Ball"].TextSize = 14
 Converted["_Ball"].AnchorPoint = Vector2.new(0, 0.5)
-Converted["_Ball"].BackgroundColor3 = Color3.fromRGB(197.0000034570694, 0, 0)
+Converted["_Ball"].BackgroundColor3 = Color3.fromRGB(0, 180, 0)
 Converted["_Ball"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Ball"].BorderSizePixel = 0
 Converted["_Ball"].Interactable = false
@@ -1487,12 +1478,12 @@ Converted["_Ball"].Parent = Converted["_Track"]
 
 Converted["_BallProgress"].Font = Enum.Font.GothamBold
 Converted["_BallProgress"].Text = "0"
-Converted["_BallProgress"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_BallProgress"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_BallProgress"].TextScaled = true
 Converted["_BallProgress"].TextSize = 14
 Converted["_BallProgress"].TextTransparency = 1
 Converted["_BallProgress"].TextWrapped = true
-Converted["_BallProgress"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_BallProgress"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_BallProgress"].BackgroundTransparency = 1
 Converted["_BallProgress"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_BallProgress"].BorderSizePixel = 0
@@ -1519,14 +1510,14 @@ Converted["_UIPadding20"].Parent = Converted["_Track"]
 
 Converted["_TrackProgress"].Font = Enum.Font.GothamBold
 Converted["_TrackProgress"].Text = "0"
-Converted["_TrackProgress"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TrackProgress"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_TrackProgress"].TextScaled = true
 Converted["_TrackProgress"].TextSize = 14
 Converted["_TrackProgress"].TextTransparency = 1
 Converted["_TrackProgress"].TextWrapped = true
 Converted["_TrackProgress"].TextXAlignment = Enum.TextXAlignment.Right
 Converted["_TrackProgress"].AnchorPoint = Vector2.new(1, 0.5)
-Converted["_TrackProgress"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_TrackProgress"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_TrackProgress"].BackgroundTransparency = 1
 Converted["_TrackProgress"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_TrackProgress"].BorderSizePixel = 0
@@ -1554,7 +1545,7 @@ Converted["_FloatingButtonSetting"].Name = "FloatingButtonSetting"
 Converted["_FloatingButtonSetting"].Parent = Converted["_YARHM"]
 
 Converted["_ControlBarContainer"].AnchorPoint = Vector2.new(0.5, 1)
-Converted["_ControlBarContainer"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_ControlBarContainer"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_ControlBarContainer"].BackgroundTransparency = 1
 Converted["_ControlBarContainer"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_ControlBarContainer"].BorderSizePixel = 0
@@ -1564,7 +1555,7 @@ Converted["_ControlBarContainer"].Name = "ControlBarContainer"
 Converted["_ControlBarContainer"].Parent = Converted["_FloatingButtonSetting"]
 
 Converted["_ControlBar"].AnchorPoint = Vector2.new(0.5, 1)
-Converted["_ControlBar"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_ControlBar"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_ControlBar"].BackgroundTransparency = 1
 Converted["_ControlBar"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_ControlBar"].BorderSizePixel = 0
@@ -1581,11 +1572,11 @@ Converted["_UIListLayout9"].Parent = Converted["_ControlBar"]
 
 Converted["_Visibility"].Font = Enum.Font.Gotham
 Converted["_Visibility"].Text = "Toggle visibility"
-Converted["_Visibility"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Visibility"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_Visibility"].TextScaled = true
 Converted["_Visibility"].TextSize = 14
 Converted["_Visibility"].TextWrapped = true
-Converted["_Visibility"].BackgroundColor3 = Color3.fromRGB(46.000001057982445, 46.000001057982445, 46.000001057982445)
+Converted["_Visibility"].BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 Converted["_Visibility"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Visibility"].BorderSizePixel = 0
 Converted["_Visibility"].Size = UDim2.new(0, 200, 1, 0)
@@ -1609,11 +1600,11 @@ Converted["_themedColor14"].Parent = Converted["_Visibility"]
 
 Converted["_Lock1"].Font = Enum.Font.Gotham
 Converted["_Lock1"].Text = "Toggle lock"
-Converted["_Lock1"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Lock1"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_Lock1"].TextScaled = true
 Converted["_Lock1"].TextSize = 14
 Converted["_Lock1"].TextWrapped = true
-Converted["_Lock1"].BackgroundColor3 = Color3.fromRGB(46.000001057982445, 46.000001057982445, 46.000001057982445)
+Converted["_Lock1"].BackgroundColor3 = Color3.fromRGB(30, 30, 30)
 Converted["_Lock1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Lock1"].BorderSizePixel = 0
 Converted["_Lock1"].Size = UDim2.new(0, 200, 1, 0)
@@ -1637,11 +1628,11 @@ Converted["_themedColor15"].Parent = Converted["_Lock1"]
 
 Converted["_Exit"].Font = Enum.Font.GothamBold
 Converted["_Exit"].Text = "X"
-Converted["_Exit"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Exit"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_Exit"].TextScaled = true
 Converted["_Exit"].TextSize = 14
 Converted["_Exit"].TextWrapped = true
-Converted["_Exit"].BackgroundColor3 = Color3.fromRGB(46.000001057982445, 0, 0)
+Converted["_Exit"].BackgroundColor3 = Color3.fromRGB(0, 60, 0)
 Converted["_Exit"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Exit"].BorderSizePixel = 0
 Converted["_Exit"].Size = UDim2.new(1, 0, 1, 0)
@@ -1670,11 +1661,11 @@ Converted["_UIListLayout10"].Parent = Converted["_ControlBarContainer"]
 
 Converted["_Tip"].Font = Enum.Font.GothamBold
 Converted["_Tip"].Text = "Drag the button around to resize!"
-Converted["_Tip"].TextColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Tip"].TextColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_Tip"].TextScaled = true
 Converted["_Tip"].TextSize = 14
 Converted["_Tip"].TextWrapped = true
-Converted["_Tip"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_Tip"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_Tip"].BackgroundTransparency = 1
 Converted["_Tip"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Tip"].BorderSizePixel = 0
@@ -1687,7 +1678,7 @@ Converted["_UIStroke12"].Parent = Converted["_Tip"]
 Converted["_UIScale6"].Parent = Converted["_ControlBarContainer"]
 
 Converted["_FloatingButtons"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_FloatingButtons"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_FloatingButtons"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_FloatingButtons"].BackgroundTransparency = 1
 Converted["_FloatingButtons"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_FloatingButtons"].BorderSizePixel = 0
@@ -1698,7 +1689,7 @@ Converted["_FloatingButtons"].Name = "FloatingButtons"
 Converted["_FloatingButtons"].Parent = Converted["_FloatingButtonSetting"]
 
 Converted["_FloatingButtons1"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_FloatingButtons1"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Converted["_FloatingButtons1"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
 Converted["_FloatingButtons1"].BackgroundTransparency = 1
 Converted["_FloatingButtons1"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_FloatingButtons1"].BorderSizePixel = 0
@@ -1720,7 +1711,7 @@ do -- Routine Module: StarterGui.YARHM.FUNCTIONS
     -- ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© Aetherion 2026
 
 		local FUNCTIONSmodule = {}
-		FUNCTIONSmodule.__v = "1.21"
+		FUNCTIONSmodule.__v = "0.23"
 		
 		local ts = game:GetService("TweenService")
 		local https = game:GetService("HttpService")
@@ -1790,17 +1781,17 @@ do -- Routine Module: StarterGui.YARHM.FUNCTIONS
 		
 		FUNCTIONSmodule.theme = {
 			font = Enum.Font.Montserrat,
-			textColor = Color3.fromRGB(255, 255, 255),
-			accentColor = Color3.fromRGB(197, 0, 0),
-			primaryColor = Color3.fromRGB(22, 22, 22),
+			textColor = Color3.fromRGB(0, 200, 0),
+			accentColor = Color3.fromRGB(0, 180, 0),
+			primaryColor = Color3.fromRGB(18, 18, 18),
 			secondaryColor = Color3.fromRGB(12, 12, 12),
 		
-			backgroundColorCSQ = ColorSequence.new(Color3.fromRGB(36, 36, 36), Color3.fromRGB(68, 68, 68)),	
+			backgroundColorCSQ = ColorSequence.new(Color3.fromRGB(25, 25, 25), Color3.fromRGB(68, 68, 68)),	
 			strokeColorCSQ = ColorSequence.new{
 				ColorSequenceKeypoint.new(0, Color3.fromRGB(53.00000064074993, 53.00000064074993, 53.00000064074993)),
-				ColorSequenceKeypoint.new(0.15224914252758026, Color3.fromRGB(50.69031357765198, 50.69031357765198, 50.69031357765198)),
-				ColorSequenceKeypoint.new(0.4723183512687683, Color3.fromRGB(255, 0, 4.000000236555934)),
-				ColorSequenceKeypoint.new(0.7577854990959167, Color3.fromRGB(50.13314567506313, 50.13314567506313, 50.13314567506313)),
+				ColorSequenceKeypoint.new(0.15224914252758026, Color3.fromRGB(33, 33, 33)),
+				ColorSequenceKeypoint.new(0.4723183512687683, Color3.fromRGB(0, 200, 0)),
+				ColorSequenceKeypoint.new(0.7577854990959167, Color3.fromRGB(33, 33, 33)),
 				ColorSequenceKeypoint.new(1, Color3.fromRGB(48.000000938773155, 48.000000938773155, 48.000000938773155))
 			},
 		}
@@ -2855,7 +2846,7 @@ do -- Routine Module: StarterGui.YARHM.ESPIndicator
 		-- Robust ESP module with distancing, arrows, and grouping
 		-- Designed and written by YARHM
 		
-		local e={} e.__index=e local a=game:GetService("RunService") local _=game:GetService("Players") local b=game:GetService("HttpService") local l=game:GetService("TweenService") e.Groups={} e.TargetIndex={} e.Defaults={AccentColor=Color3.new(1,1,0),HighlightFillTransparency=0.7,HighlightOutlineTransparency=0,HighlightDepthMode=Enum.HighlightDepthMode.AlwaysOnTop,ArrowShow=false,ArrowEdgePadding=50,ArrowMinDistance=0,ArrowSize=UDim2.new(0,30,0,30),ArrowImage="rbxassetid://97136202386756",ArrowShowDistanceText=true,ArrowDistanceFont=Enum.Font.Montserrat,ArrowDistanceTextSize=18,ShowLabel=false,LabelText="Target",LabelMaxDistance=99999,LabelOffset=Vector3.new(0,2,0),Parent=game:GetService("CoreGui")} function e.new(b)local c=setmetatable({},e) c.Settings={} for a,_ in pairs(e.Defaults)do c.Settings[a]=(b and b[a]~=nil)and b[a]or _ end local _=c.Settings.Parent or _.LocalPlayer:WaitForChild("PlayerGui") c.ScreenGui=Instance.new("ScreenGui") c.ScreenGui.Name="ESPIndicators" c.ScreenGui.IgnoreGuiInset=true c.ScreenGui.ResetOnSpawn=false c.ScreenGui.Parent=_ c.ArrowTemplate=Instance.new("ImageLabel") c.ArrowTemplate.Name="ArrowTemplate" c.ArrowTemplate.Size=c.Settings.ArrowSize c.ArrowTemplate.AnchorPoint=Vector2.new(0.5,0.5) c.ArrowTemplate.BackgroundTransparency=1 c.ArrowTemplate.Image=c.Settings.ArrowImage c.ArrowTemplate.ImageColor3=c.Settings.AccentColor c.ArrowTemplate.Visible=false c.ArrowTemplate.Parent=c.ScreenGui c.Scaler=Instance.new("UIScale") c.Scaler.Name="Scaler" c.Scaler.Scale=0 c.Scaler.Parent=c.ArrowTemplate c.Indicators={} c._updateConn=a.RenderStepped:Connect(function()c:_update()end) c._cleanupConn=a.Heartbeat:Connect(function()c:_cleanupOrphanedArrows() c:_cleanupOrphanedHighlights() c:_cleanupOrphanedLabels()end) return c end function e:AddGroup(_)local a=e.Groups[_] if not a then a={enabled=true,properties={},targets={}} e.Groups[_]=a end return a end function e:GetGroup(_)return e.Groups[_]end function e:RemoveGroup(b)local _=e.Groups[b] if not _ then return false end for _,_ in ipairs(_.targets)do local c=e.TargetIndex[_] if c then for _,a in ipairs(c)do if a==b then table.remove(c,_) break end end if#c==0 then e.TargetIndex[_]=nil end end if not e.TargetIndex[_]then self:Remove(_)end end e.Groups[b]=nil return true end function e:ClearAllGroups()for a,_ in pairs(e.Groups)do self:RemoveGroup(a)end end function e:ToggleGroup(_,a)local b=e.Groups[_] if not b then return end b.enabled=(a~=nil)and a or not b.enabled for _,_ in ipairs(b.targets)do local _=self.Indicators[_] if _ then if _.Highlight then _.Highlight.Enabled=b.enabled end if _.Arrow then _.Arrow.Visible=b.enabled and self.Settings.ArrowShow end if _.Label then _.Label.Enabled=b.enabled end end end return b.enabled end function e:SetGroupProperty(_,a,b)local _=self:AddGroup(_) _.properties[a]=b for _,_ in ipairs(_.targets)do local _=self.Indicators[_] if _ then if a=="AccentColor"then if _.Highlight then _.Highlight.FillColor=b _.Highlight.OutlineColor=b end if _.Arrow then _.Arrow.ImageColor3=b end if _.DistanceLabel then _.DistanceLabel.TextColor3=b end if _.Label and _.Label:FindFirstChild("TextLabel")then _.Label.TextLabel.TextColor3=b end end end end end function e:Add(a,g)assert(a,"ESPIndicator:Add requires a non-nil target") g=g or{} local d=Instance.new("Highlight") d.Name="Highlight_"..b:GenerateGUID(false) d.Adornee=a d.FillTransparency=g.HighlightFillTransparency or self.Settings.HighlightFillTransparency d.FillColor=g.AccentColor or self.Settings.AccentColor d.OutlineColor=g.AccentColor or self.Settings.AccentColor d.OutlineTransparency=g.HighlightOutlineTransparency or self.Settings.HighlightOutlineTransparency d.DepthMode=g.HighlightDepthMode or self.Settings.HighlightDepthMode d.Parent=self.ScreenGui local c,_,e if(g.ArrowShow or self.Settings.ArrowShow)then c=self.ArrowTemplate:Clone() c.Name="Arrow_"..b:GenerateGUID(false) c.ImageColor3=g.AccentColor or self.Settings.AccentColor c.Visible=true c.Parent=self.ScreenGui _=c:FindFirstChild("Scaler") if(g.ArrowShowDistanceText or self.Settings.ArrowShowDistanceText)then e=Instance.new("TextLabel") e.Name="DistanceLabel" e.AnchorPoint=Vector2.new(0.5,0) e.BackgroundTransparency=1 e.Font=g.ArrowDistanceFont or self.Settings.ArrowDistanceFont e.TextSize=g.ArrowDistanceTextSize or self.Settings.ArrowDistanceTextSize e.TextColor3=g.AccentColor or self.Settings.AccentColor e.Parent=c end end local f if(g.ShowLabel or self.Settings.ShowLabel)then f=Instance.new("BillboardGui") f.Name="Label_"..b:GenerateGUID(false) f.AlwaysOnTop=true f.MaxDistance=self.Settings.LabelMaxDistance f.Size=UDim2.new(0,70,0,70) f.StudsOffset=self.Settings.LabelOffset f.Adornee=a f.Parent=self.ScreenGui local _=Instance.new("TextLabel") _.Name="TextLabel" _.Size=UDim2.new(1,0,1,0) _.AnchorPoint=Vector2.new(0.5,0.5) _.Position=UDim2.new(0.5,0,0.5,0) _.BackgroundTransparency=1 _.Font=Enum.Font.SourceSansBold _.TextScaled=true _.TextWrapped=true _.TextSize=14 _.TextColor3=g.AccentColor or self.Settings.AccentColor _.Text=g.LabelText or self.Settings.LabelText _.Parent=f Instance.new("UIStroke",_)end self.Indicators[a]={Highlight=d,Arrow=c,Scaler=_,DistanceLabel=e,Label=f,Options=g} local _=g.GroupName or self.Settings.GroupName if _ then self:AddToGroup(a,_)end end function e:Remove(c)local _=self.Indicators[c] if not _ then return end if _.Highlight then _.Highlight.Adornee=nil _.Highlight:Destroy()end if _.Arrow then _.Arrow:Destroy()end if _.Label then _.Label:Destroy()end local _=e.TargetIndex[c] if _ then for _,_ in ipairs(_)do local b=e.Groups[_] if b then for a,_ in ipairs(b.targets)do if _==c then table.remove(b.targets,a) break end end end end e.TargetIndex[c]=nil end self.Indicators[c]=nil end function e:AddToGroup(c,b)local _=self:AddGroup(b) if not table.find(_.targets,c)then table.insert(_.targets,c)end local a=e.TargetIndex[c] if not a then a={} e.TargetIndex[c]=a end if not table.find(a,b)then table.insert(a,b)end for a,_ in pairs(_.properties)do self:SetGroupProperty(b,a,_)end if not _.enabled then local _=self.Indicators[c] if _ and _.Highlight then _.Highlight.Enabled=false end end return true end function e:RemoveFromGroup(d,b)local c=e.Groups[b] if not c then return false end if table.find(c.targets,d)then for _,a in ipairs(c.targets)do if a==d then table.remove(c.targets,_) break end end else return false end local c=e.TargetIndex[d] if c then for a,_ in ipairs(c)do if _==b then table.remove(c,a) break end end if#c==0 then e.TargetIndex[d]=nil end end return true end function e:GetGroupTargets(_)local _=e.Groups[_] return _ and _.targets or{}end function e:GetTargetGroups(_)return e.TargetIndex[_]or{}end function e:_cleanupOrphanedHighlights()for _,_ in ipairs(self.ScreenGui:GetChildren())do if _:IsA("Highlight")and not table.find(self:_allHighlights(),_)then _.Adornee=nil _:Destroy()end end end function e:_allHighlights()local a={} for _,_ in pairs(self.Indicators)do if _.Highlight then table.insert(a,_.Highlight)end end return a end function e:_cleanupOrphanedArrows()for _,_ in ipairs(self.ScreenGui:GetChildren())do if _:IsA("ImageLabel")and _.Name:match("^Arrow_")then if not table.find(self:_allArrows(),_)then _:Destroy()end end end end function e:_allArrows()local a={} for _,_ in pairs(self.Indicators)do if _.Arrow then table.insert(a,_.Arrow)end end return a end function e:_cleanupOrphanedLabels()for _,_ in ipairs(self.ScreenGui:GetChildren())do if _:IsA("BillboardGui")and _.Name:match("^Label_")then if not table.find(self:_allLabels(),_)then _.Adornee=nil _:Destroy()end end end end function e:_allLabels()local a={} for _,_ in pairs(self.Indicators)do if _.Label then table.insert(a,_.Label)end end return a end function e:_update()local a=workspace.CurrentCamera local _=a.ViewportSize local f,i=_.X,_.Y for _,p in pairs(self.Indicators)do local j=p.Options local h=p.Arrow local k=p.Scaler if((not h)or(not k))and self.Settings.ArrowShow then self:Remove(_) continue end if not h then continue end local n if _:IsA("Model")then n=(_.PrimaryPart and _.PrimaryPart.Position)or _:GetModelCFrame().p elseif _:IsA("BasePart")then n=_.Position else continue end local m,e=a:WorldToViewportPoint(n) local c=(a.CFrame.p-n).Magnitude local _=j.ArrowMinDistance or self.Settings.ArrowMinDistance local o=j.ArrowEdgePadding or self.Settings.ArrowEdgePadding if e and c>_ then k.Scale=0 else k.Scale=1 local d,g=f-o*2,i-o*2 local b=a.CFrame local _=math.sqrt((d/2)^2+(g/2)^2) local a=n-b.Position local a=b:VectorToObjectSpace(a) local n=Vector2.new(a.X,a.Y).Unit local a=math.clamp(m.X,o,f-o) local b=math.clamp(m.Y,o,i-o) if a==m.X and b==m.Y and e then k.Scale=0 else local _=n*_ local b if math.abs(_.Y)>g/2 then b=n*math.abs((g/2)/n.Y)else b=n*math.abs((d/2)/n.X)end local a=f/2+b.X local _=i/2-b.Y local b=math.atan2(n.X,n.Y) h.Position=UDim2.fromOffset(a,_) h.Rotation=math.deg(b) end if p.DistanceLabel then p.DistanceLabel.Text=string.format("%dm",math.round(c)) local _=(j.ArrowSize and j.ArrowSize.Y.Offset or self.Settings.ArrowSize.Y.Offset)+16 p.DistanceLabel.Position=UDim2.new(0.5,0,0,_)end end end end function e:Destroy()if self._updateConn then self._updateConn:Disconnect()end if self._cleanupConn then self._cleanupConn:Disconnect()end self:ClearAllGroups() for _,_ in pairs(self.Indicators)do if _.Highlight then _.Highlight:Destroy()end if _.Arrow then _.Arrow:Destroy()end if _.Label then _.Label:Destroy()end end self.ScreenGui:Destroy() self.Indicators={} e.Groups={} e.TargetIndex={}end return e
+		local e={} e.__index=e local a=game:GetService("RunService") local _=game:GetService("Players") local b=game:GetService("HttpService") local l=game:GetService("TweenService") e.Groups={} e.TargetIndex={} e.Defaults={AccentColor=Color3.new(1,1,0),HighlightFillTransparency=0.7,HighlightOutlineTransparency=0,HighlightDepthMode=Enum.HighlightDepthMode.AlwaysOnTop,ArrowShow=false,ArrowEdgePadding=50,ArrowMinDistance=0,ArrowSize=UDim2.new(0,30,0,30),ArrowImage="rbxassetid://97136202386756",ArrowShowDistanceText=true,ArrowDistanceFont=Enum.Font.Montserrat,ArrowDistanceTextSize=18,ShowLabel=false,LabelText="Target",LabelMaxDistance=99999,LabelOffset=Vector3.new(0,2,0),Parent=game:GetService("CoreGui")} function e.new(b)local c=setmetatable({},e) c.Settings={} for a,_ in pairs(e.Defaults)do c.Settings[a]=(b and b[a]~=nil)and b[a]or _ end local _=c.Settings.Parent or _.LocalPlayer:WaitForChild("PlayerGui") c.ScreenGui=Instance.new("ScreenGui") c.ScreenGui.Name="ESPIndicators" c.ScreenGui.IgnoreGuiInset=true c.ScreenGui.ResetOnSpawn=false c.ScreenGui.Parent=_ c.ArrowTemplate=Instance.new("ImageLabel") c.ArrowTemplate.Name="ArrowTemplate" c.ArrowTemplate.Size=c.Settings.ArrowSize c.ArrowTemplate.AnchorPoint=Vector2.new(0.5,0.5) c.ArrowTemplate.BackgroundTransparency=1 c.ArrowTemplate.Image=c.Settings.ArrowImage c.ArrowTemplate.ImageColor3=c.Settings.AccentColor c.ArrowTemplate.Visible=false c.ArrowTemplate.Parent=c.ScreenGui c.Scaler=Instance.new("UIScale") c.Scaler.Name="Scaler" c.Scaler.Scale=0 c.Scaler.Parent=c.ArrowTemplate c.Indicators={} c._updateConn=a.RenderStepped:Connect(function()c:_update()end) c._cleanupConn=a.Heartbeat:Connect(function()c:_cleanupOrphanedArrows() c:_cleanupOrphanedHighlights() c:_cleanupOrphanedLabels()end) return c end function e:AddGroup(_)local a=e.Groups[_] if not a then a={enabled=true,properties={},targets={}} e.Groups[_]=a end return a end function e:GetGroup(_)return e.Groups[_]end function e:RemoveGroup(b)local _=e.Groups[b] if not _ then return false end for _,_ in ipairs(_.targets)do local c=e.TargetIndex[_] if c then for _,a in ipairs(c)do if a==b then table.remove(c,_) break end end if#c==0 then e.TargetIndex[_]=nil end end if not e.TargetIndex[_]then self:Remove(_)end end e.Groups[b]=nil return true end function e:ClearAllGroups()for a,_ in pairs(e.Groups)do self:RemoveGroup(a)end end function e:ToggleGroup(_,a)local b=e.Groups[_] if not b then return end b.enabled=(a~=nil)and a or not b.enabled for _,_ in ipairs(b.targets)do local _=self.Indicators[_] if _ then if _.Highlight then _.Highlight.Enabled=b.enabled end if _.Arrow then _.Arrow.Visible=b.enabled and self.Settings.ArrowShow end if _.Label then _.Label.Enabled=b.enabled end end end return b.enabled end function e:SetGroupProperty(_,a,b)local _=self:AddGroup(_) _.properties[a]=b for _,_ in ipairs(_.targets)do local _=self.Indicators[_] if _ then if a=="AccentColor"then if _.Highlight then _.Highlight.FillColor=b _.Highlight.OutlineColor=b end if _.Arrow then _.Arrow.ImageColor3=b end if _.DistanceLabel then _.DistanceLabel.TextColor3=b end if _.Label and _.Label:FindFirstChild("TextLabel")then _.Label.TextLabel.TextColor3=b end end end end end function e:Add(a,g)assert(a,"ESPIndicator:Add requires a non-nil target") g=g or{} local d=Instance.new("Highlight") d.Name="Highlight_"..b:GenerateGUID(false) d.Adornee=a d.FillTransparency=g.HighlightFillTransparency or self.Settings.HighlightFillTransparency d.FillColor=g.AccentColor or self.Settings.AccentColor d.OutlineColor=g.AccentColor or self.Settings.AccentColor d.OutlineTransparency=g.HighlightOutlineTransparency or self.Settings.HighlightOutlineTransparency d.DepthMode=g.HighlightDepthMode or self.Settings.HighlightDepthMode d.Parent=self.ScreenGui local c,_,e if(g.ArrowShow or self.Settings.ArrowShow)then c=self.ArrowTemplate:Clone() c.Name="Arrow_"..b:GenerateGUID(false) c.ImageColor3=g.AccentColor or self.Settings.AccentColor c.Visible=true c.Parent=self.ScreenGui _=c:FindFirstChild("Scaler") if(g.ArrowShowDistanceText or self.Settings.ArrowShowDistanceText)then e=Instance.new("TextLabel") e.Name="DistanceLabel" e.AnchorPoint=Vector2.new(0.5,0) e.BackgroundTransparency=1 e.Font=g.ArrowDistanceFont or self.Settings.ArrowDistanceFont e.TextSize=g.ArrowDistanceTextSize or self.Settings.ArrowDistanceTextSize e.TextColor3=g.AccentColor or self.Settings.AccentColor e.Parent=c end end local f if(g.ShowLabel or self.Settings.ShowLabel)then f=Instance.new("BillboardGui") f.Name="Label_"..b:GenerateGUID(false) f.AlwaysOnTop=true f.MaxDistance=self.Settings.LabelMaxDistance f.Size=UDim2.new(0,70,0,70) f.StudsOffset=self.Settings.LabelOffset f.Adornee=a f.Parent=self.ScreenGui local _=Instance.new("TextLabel") _.Name="TextLabel" _.Size=UDim2.new(1,0,1,0) _.AnchorPoint=Vector2.new(0.5,0.5) _.Position=UDim2.new(0.5,0,0.5,0) _.BackgroundTransparency=1 _.Font=Enum.Font.SourceSansBold _.TextScaled=true _.TextWrapped=true _.TextSize=14 _.TextColor3=g.AccentColor or self.Settings.AccentColor _.Text=g.LabelText or self.Settings.LabelText _.Parent=f Instance.new("UIStroke",_)end self.Indicators[a]={Highlight=d,Arrow=c,Scaler=_,DistanceLabel=e,Label=f,Options=g} local _=g.GroupName or self.Settings.GroupName if _ then self:AddToGroup(a,_)end end function e:Remove(c)local _=self.Indicators[c] if not _ then return end if _.Highlight then _.Highlight.Adornee=nil _.Highlight:Destroy()end if _.Arrow then _.Arrow:Destroy()end if _.Label then _.Label:Destroy()end local _=e.TargetIndex[c] if _ then for _,_ in ipairs(_)do local b=e.Groups[_] if b then for a,_ in ipairs(b.targets)do if _==c then table.remove(b.targets,a) break end end end end e.TargetIndex[c]=nil end self.Indicators[c]=nil end function e:AddToGroup(c,b)local _=self:AddGroup(b) if not table.find(_.targets,c)then table.insert(_.targets,c)end local a=e.TargetIndex[c] if not a then a={} e.TargetIndex[c]=a end if not table.find(a,b)then table.insert(a,b)end for a,_ in pairs(_.properties)do self:SetGroupProperty(b,a,_)end if not _.enabled then local _=self.Indicators[c] if _ and _.Highlight then _.Highlight.Enabled=false end end return true end function e:RemoveFromGroup(d,b)local c=e.Groups[b] if not c then return false end if table.find(c.targets,d)then for _,a in ipairs(c.targets)do if a==d then table.remove(c.targets,_) break end end else return false end local c=e.TargetIndex[d] if c then for a,_ in ipairs(c)do if _==b then table.remove(c,a) break end end if#c==0 then e.TargetIndex[d]=nil end end return true end function e:GetGroupTargets(_)local _=e.Groups[_] return _ and _.targets or{}end function e:GetTargetGroups(_)return e.TargetIndex[_]or{}end function e:_cleanupOrphanedHighlights()for _,_ in ipairs(self.ScreenGui:GetChildren())do if _:IsA("Highlight")and not table.find(self:_allHighlights(),_)then _.Adornee=nil _:Destroy()end end end function e:_allHighlights()local a={} for _,_ in pairs(self.Indicators)do if _.Highlight then table.insert(a,_.Highlight)end end return a end function e:_cleanupOrphanedArrows()for _,_ in ipairs(self.ScreenGui:GetChildren())do if _:IsA("ImageLabel")and _.Name:match("^Arrow_")then if not table.find(self:_allArrows(),_)then _:Destroy()end end end end function e:_allArrows()local a={} for _,_ in pairs(self.Indicators)do if _.Arrow then table.insert(a,_.Arrow)end end return a end function e:_cleanupOrphanedLabels()for _,_ in ipairs(self.ScreenGui:GetChildren())do if _:IsA("BillboardGui")and _.Name:match("^Label_")then if not table.find(self:_allLabels(),_)then _.Adornee=nil _:Destroy()end end end end function e:_allLabels()local a={} for _,_ in pairs(self.Indicators)do if _.Label then table.insert(a,_.Label)end end return a end function e:_update()local a=workspace.CurrentCamera local _=a.ViewportSize local f,i=_.X,_.Y for _,p in pairs(self.Indicators)do local j=p.Options local h=p.Arrow local k=p.Scaler if((not h)or(not k))and self.Settings.ArrowShow then self:Remove(_) continue end if not h then continue end local n if _:IsA("Model")then n=(_.PrimaryPart and _.PrimaryPart.Position)or _:GetModelCFrame().p elseif _:IsA("BasePart")then n=_.Position else continue end local m,e=a:WorldToViewportPoint(n) local c=(a.CFrame.p-n).Magnitude local _=j.ArrowMinDistance or self.Settings.ArrowMinDistance local o=j.ArrowEdgePadding or self.Settings.ArrowEdgePadding if e and c>_ then if k.Scale~=0 then k.Scale=0 end else if k.Scale~=1 then k.Scale=1 end local d,g=f-o*2,i-o*2 local b=a.CFrame local _=math.sqrt((d/2)^2+(g/2)^2) local a=n-b.Position local a=b:VectorToObjectSpace(a) local n=Vector2.new(a.X,a.Y).Unit local a=math.clamp(m.X,o,f-o) local b=math.clamp(m.Y,o,i-o) if a==m.X and b==m.Y and e then if k.Scale~=0 then k.Scale=0 end else local _=n*_ local b if math.abs(_.Y)>g/2 then b=n*math.abs((g/2)/n.Y)else b=n*math.abs((d/2)/n.X)end local a=f/2+b.X local _=i/2-b.Y local b=math.atan2(n.X,n.Y) h.Position=UDim2.fromOffset(a,_);h.Rotation=math.deg(b) end if p.DistanceLabel then p.DistanceLabel.Text=string.format("%dm",math.round(c)) local _=(j.ArrowSize and j.ArrowSize.Y.Offset or self.Settings.ArrowSize.Y.Offset)+16 p.DistanceLabel.Position=UDim2.new(0.5,0,0,_)end end end end function e:Destroy()if self._updateConn then self._updateConn:Disconnect()end if self._cleanupConn then self._cleanupConn:Disconnect()end self:ClearAllGroups() for _,_ in pairs(self.Indicators)do if _.Highlight then _.Highlight:Destroy()end if _.Arrow then _.Arrow:Destroy()end if _.Label then _.Label:Destroy()end end self.ScreenGui:Destroy() self.Indicators={} e.Groups={} e.TargetIndex={}end return e
     end
     routine_module_scripts[script] = module_script
 end
@@ -2897,17 +2888,17 @@ do -- Routine Module: StarterGui.YARHM.Theme
 		local api = {
 			colors = {
 				font = Enum.Font.Montserrat,
-				textColor = Color3.fromRGB(255, 255, 255),
-				accentColor = Color3.fromRGB(197, 0, 0),
-				primaryColor = Color3.fromRGB(22, 22, 22),
+				textColor = Color3.fromRGB(0, 200, 0),
+				accentColor = Color3.fromRGB(0, 180, 0),
+				primaryColor = Color3.fromRGB(18, 18, 18),
 				secondaryColor = Color3.fromRGB(12, 12, 12),
 		
-				backgroundColorCSQ = ColorSequence.new(Color3.fromRGB(36, 36, 36), Color3.fromRGB(68, 68, 68)),	
+				backgroundColorCSQ = ColorSequence.new(Color3.fromRGB(25, 25, 25), Color3.fromRGB(68, 68, 68)),	
 				strokeColorCSQ = ColorSequence.new{
 					ColorSequenceKeypoint.new(0, Color3.fromRGB(53.00000064074993, 53.00000064074993, 53.00000064074993)),
-					ColorSequenceKeypoint.new(0.15224914252758026, Color3.fromRGB(50.69031357765198, 50.69031357765198, 50.69031357765198)),
-					ColorSequenceKeypoint.new(0.4723183512687683, Color3.fromRGB(255, 0, 4.000000236555934)),
-					ColorSequenceKeypoint.new(0.7577854990959167, Color3.fromRGB(50.13314567506313, 50.13314567506313, 50.13314567506313)),
+					ColorSequenceKeypoint.new(0.15224914252758026, Color3.fromRGB(33, 33, 33)),
+					ColorSequenceKeypoint.new(0.4723183512687683, Color3.fromRGB(0, 200, 0)),
+					ColorSequenceKeypoint.new(0.7577854990959167, Color3.fromRGB(33, 33, 33)),
 					ColorSequenceKeypoint.new(1, Color3.fromRGB(48.000000938773155, 48.000000938773155, 48.000000938773155))
 				},
 			}
@@ -3336,29 +3327,44 @@ local function CEBY_routine() -- Routine: StarterGui.YARHM.Universal
 		Args = {"Infinite jump", function(Self, state)
 			local uis = game:GetService("UserInputService")
 			if state then
-				getgenv().infJumpConnYarhm = uis.InputBegan:Connect(function(inp)
-					if inp.KeyCode == Enum.KeyCode.Space and not uis:GetFocusedTextBox() then
-						local character = game.Players.LocalPlayer.Character
-						if character and character:FindFirstChild("Humanoid") and character:FindFirstChild("HumanoidRootPart") then
-							local hum = character.Humanoid
-							local origJP = hum.JumpPower
-							local newJP = math.random(1, 10) <= 8 and 50 or 51
-							hum.JumpPower = newJP
-							
-							local floor = Instance.new("Part")
-							floor.Transparency = 1
-							floor.Size = Vector3.new(4, 0.5, 4)
-							floor.Anchored = true
-							floor.CanCollide = true
-							floor.Parent = workspace
-							floor.CFrame = character.HumanoidRootPart.CFrame * CFrame.new(0, -3.25, 0)
-							hum:ChangeState(Enum.HumanoidStateType.Jumping)
-							task.wait(0.05)
-							floor:Destroy()
-							hum.JumpPower = origJP
-						end
+				local function execJump()
+					local character = game.Players.LocalPlayer.Character
+					if character and character:FindFirstChild("Humanoid") and character:FindFirstChild("HumanoidRootPart") then
+						local hum = character.Humanoid
+						local origJP = hum.JumpPower
+						local newJP = math.random(1, 10) <= 8 and 50 or 51
+						hum.JumpPower = newJP
+						
+						local floor = Instance.new("Part")
+						floor.Transparency = 1
+						floor.Size = Vector3.new(4, 0.5, 4)
+						floor.Anchored = true
+						floor.CanCollide = true
+						floor.Parent = workspace
+						floor.CFrame = character.HumanoidRootPart.CFrame * CFrame.new(0, -3.25, 0)
+						hum:ChangeState(Enum.HumanoidStateType.Jumping)
+						task.wait(0.05)
+						floor:Destroy()
+						hum.JumpPower = origJP
 					end
-				end)
+				end
+
+				if uis.TouchEnabled and not uis.KeyboardEnabled then
+					getgenv().infJumpDebounceYarhm = false
+					getgenv().infJumpConnYarhm = uis.JumpRequest:Connect(function()
+						if getgenv().infJumpDebounceYarhm then return end
+						getgenv().infJumpDebounceYarhm = true
+						execJump()
+						task.wait(0.1)
+						getgenv().infJumpDebounceYarhm = false
+					end)
+				else
+					getgenv().infJumpConnYarhm = uis.InputBegan:Connect(function(inp, gpe)
+						if not gpe and inp.KeyCode == Enum.KeyCode.Space and not uis:GetFocusedTextBox() then
+							execJump()
+						end
+					end)
+				end
 			else
 				if getgenv().infJumpConnYarhm then getgenv().infJumpConnYarhm:Disconnect() end
 			end
@@ -3628,12 +3634,12 @@ local function CEBY_routine() -- Routine: StarterGui.YARHM.Universal
 	table.insert(module, {
 		Type = "Input",
 		Args = {"Target player", "Set target", function(Self, input)
-			local targetName = getPlayer(input, game.Players.LocalPlayer)
-			if not targetName or not Players:FindFirstChild(targetName) then
+			if not Players:FindFirstChild(getPlayer(input, game.Players.LocalPlayer)) then
+				fu.notification("Player not found.")
 				return
 			end
-			fu.notification("Target is set to " .. Players:FindFirstChild(targetName).Name)
-			target = Players:FindFirstChild(targetName)
+			fu.notification("Target is set to " .. Players:FindFirstChild(getPlayer(input, game.Players.LocalPlayer)).Name)
+			target = Players:FindFirstChild(getPlayer(input, game.Players.LocalPlayer))
 		end,}
 	})
 	
@@ -3647,8 +3653,10 @@ local function CEBY_routine() -- Routine: StarterGui.YARHM.Universal
 			if not target then fu.notification("Set a target first.") return end
 			aimlockrscon = rs.Heartbeat:Connect(function()
 				if not target then fu.notification("No valid target.") aimlockrscon:Disconnect() return end
-				if not target.Character or not target.Character:FindFirstChild("HumanoidRootPart") then return end
-				cam.CFrame = CFrame.new(cam.CFrame.Position, target.Character:FindFirstChild("HumanoidRootPart").Position)
+				if not target.Character then return end
+				local hrp = target.Character:FindFirstChild("HumanoidRootPart")
+				if not hrp then return end
+				cam.CFrame = CFrame.new(cam.CFrame.Position, hrp.Position)
 			end)
 			aimlock = true
 			fu.notification("Aim lock is now on.")
@@ -3677,12 +3685,12 @@ local function CEBY_routine() -- Routine: StarterGui.YARHM.Universal
 	table.insert(module, {
 		Type = "Input",
 		Args = {"Target fling player", "Set target", function(Self, input)
-			local targetName = getPlayer(input, game.Players.LocalPlayer)
-			if not targetName or not Players:FindFirstChild(targetName) then
+			if not Players:FindFirstChild(getPlayer(input, game.Players.LocalPlayer)) then
+				fu.notification("Player not found.")
 				return
 			end
-			fu.notification("Target is set to " .. Players:FindFirstChild(targetName).Name)
-			playerToFling = Players:FindFirstChild(targetName)
+			fu.notification("Target is set to " .. Players:FindFirstChild(getPlayer(input, game.Players.LocalPlayer)).Name)
+			playerToFling = Players:FindFirstChild(getPlayer(input, game.Players.LocalPlayer))
 		end,}
 	})
 	
@@ -3916,17 +3924,12 @@ local function CEBY_routine() -- Routine: StarterGui.YARHM.Universal
 			antiFling = state
 			if state then
 				fu.notification("Anti-fling activated.")
-				local lastFlingCheck = 0
 				flingDetectionCon = rs.Heartbeat:Connect(function()
-					if tick() - lastFlingCheck < 0.1 then return end
-					lastFlingCheck = tick()
-					
 					local players = game:GetService("Players"):GetPlayers()
 					for _, pl in ipairs(players) do
 						if not pl.Character then continue end
-						local char = pl.Character
-						if char:IsDescendantOf(workspace) and char.PrimaryPart then
-							if char.PrimaryPart.AssemblyAngularVelocity.Magnitude > 50 or char.PrimaryPart.AssemblyLinearVelocity.Magnitude > 100 then
+						if pl.Character:IsDescendantOf(workspace) then
+							if pl.Character.PrimaryPart.AssemblyAngularVelocity.Magnitude > 50 or pl.Character.PrimaryPart.AssemblyLinearVelocity.Magnitude > 100 then
 								if not detectedPlayers[pl.Name] then
 									fu.notification("A flinger has been detected with the name " .. pl.Name .. "!")
 									detectedPlayers[pl.Name] = true	
@@ -4441,7 +4444,7 @@ local function DSZIHQM_routine() -- Routine: StarterGui.YARHM.Init
 	script.Parent.ResetOnSpawn = false
 	
 	
-	script.Parent.Menu.Position = UDim2.fromScale(0.5, -0.6)
+	script.Parent.Menu.Position = UDim2.fromScale(0.5, 0.05)
 	--script.Parent.Menu.Size = UDim2.fromOffset(441,0)
 	
 	script.Parent.Dialog.Size = UDim2.fromOffset(0, 147)
@@ -4459,11 +4462,7 @@ local function DSZIHQM_routine() -- Routine: StarterGui.YARHM.Init
 	--require(script.Parent.FUNCTIONS).notification("Welcome to YARHM Nebula.")
 	script.Parent.Menu.HubName.Text = script.Parent.Menu.HubName.Text .. `<font transparency="0.8" size="5">{require(script.Parent.FUNCTIONS).__v}</font>`
 	
-	ts:Create(script.Parent.Menu, TweenInfo.new(1, Enum.EasingStyle.Cubic, Enum.EasingDirection.Out), 
-		{Position = UDim2.fromScale(0.5, 0.05)}
-	):Play()
-	
-	task.wait(1)
+	task.wait(0.1)
 	ts:Create(script.Parent.Menu.CanvasGroup, TweenInfo.new(0.5, Enum.EasingStyle.Cubic, Enum.EasingDirection.Out), 
 		{GroupTransparency = 1}
 	):Play()
@@ -4900,7 +4899,7 @@ local function XXZOB_routine() -- Routine: StarterGui.YARHM.Murder Mystery 2
 			--			a.Name = "PlayerESP"
 			--			a.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
 			--			a.Adornee = character
-			--			a.FillColor = Color3.fromRGB(255, 255, 255)
+			--			a.FillColor = Color3.fromRGB(0, 200, 0)
 			--			a.FillTransparency = 0.5
 			--			task.spawn(function()
 			--				if player == findMurderer() then
@@ -4969,22 +4968,17 @@ local function XXZOB_routine() -- Routine: StarterGui.YARHM.Murder Mystery 2
 							local toclosestcoin = ts:Create(localplayer.Character:FindFirstChild("HumanoidRootPart"), TweenInfo.new(distance*0.05, Enum.EasingStyle.Linear), {
 								CFrame = closestCoin:GetPivot()
 							})
-
-							local con
-							con = closestCoin.AncestryChanged:Connect(function(_, parent)
-								if not parent then
+							toclosestcoin:Play()
+							local mapCleanupCon
+							mapCleanupCon = rs.Heartbeat:Connect(function()
+								if not closestCoin or not closestCoin:IsDescendantOf(workspace) then
 									toclosestcoin:Cancel()
-									if con then con:Disconnect() con = nil end
 								end
 							end)
-							
-							toclosestcoin:Play()
-							toclosestcoin.Completed:Wait()
-							if con then con:Disconnect() con = nil end
+							pcall(function() toclosestcoin.Completed:Wait() end)
+							if mapCleanupCon then mapCleanupCon:Disconnect() end
 							task.wait(0.1)
-							if closestCoin and closestCoin.Parent then
-								closestCoin:Destroy() -- so we wont try to get it anymore
-							end
+							if closestCoin and closestCoin.Parent then closestCoin:Destroy() end -- so we wont try to get it anymore
 							--localplayer.Character:MoveTo(Vector3.new(closestCoin:GetPivot().X, closestCoin:GetPivot().Y, closestCoin:GetPivot().Z))
 							claimedCoins[closestCoin] = true
 						end
@@ -5031,88 +5025,53 @@ local function XXZOB_routine() -- Routine: StarterGui.YARHM.Murder Mystery 2
 			else
 				fu.notification("Murderer is too close for trajectory prediction. Reverting to simple prediction.")
 			end
-		elseif predictionAIEngine and not getgenv().YARHMNetwork_predictPos then
+		elseif predictionAIEngine and not getgenv().YARHMNetwork.predictPos then
 			fu.notification("YARHM AI Engine is not available. Reverting to simple prediction.")	
 		end
 
 		-- =========================================================
-		-- DYNAMIC PING & VELOCITY COMPENSATION (100% Hit Chance)
+		-- ON-DEMAND BLENDED INTENT VELOCITY (The Juke Solution)
 		-- =========================================================
-		-- Intent velocity mapping 
 		local runSpeed = math.max(playerHum.WalkSpeed, 16)
 		local intentVelocity = playerHum.MoveDirection * runSpeed
 		local actualVelocity = playerHRP.AssemblyLinearVelocity
 		
-		-- Blend 60% intent for highly responsive juke prediction
-		local velocity = actualVelocity:Lerp(intentVelocity, 0.6) 
+		-- Blend momentum with current intent. If they juke, intentVelocity changes violently.
+		-- 45% of the vector represents their absolute current keypress intent.
+		local velocity = actualVelocity:Lerp(intentVelocity, 0.45) 
 		
-		if velocity.Magnitude < 0.5 then 
-			return playerHRP.Position 
-		end
+		local speed = velocity.Magnitude
+		if speed < 1.0 then return playerHRP.Position end
 		
-		-- Fetch real ping, prioritizing exact ServerStats, fallback to localplayer network
-		local ping = 0.05
-		pcall(function()
-			ping = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValue() / 1000
-		end)
-		if ping == 0 then
-			ping = localplayer:GetNetworkPing()
-		end
+		-- DYNAMIC SCALED OFFSET + PING CLAMP
+		local ping = localplayer:GetNetworkPing()
+		-- Hard-clamp max ping to 150ms to prevent extreme overshoot on lagspikes
+		local maxPingCompensation = math.clamp(ping, 0, 0.150) 
 		
-		-- CLAMP PING: 
-		-- MM2's strict tolerance means anything over ~160ms of pure math prediction 
-		-- gets rejected by the server as "impossible movement".
-		local maxSafePing = 0.160
-		local predictionTime = math.clamp(ping, 0.03, maxSafePing) 
-		
-		-- Incorporate user's shootOffset gently as a fine-tuning multiplier.
-		-- Default shootOffset is 2.8. So (2.8/2.8) = 1 (Perfect ping prediction).
-		local multiplier = math.max(shootOffset and (shootOffset / 2.8) or 1, 0.1)
-		predictionTime = predictionTime * multiplier
-		
-		local predictedPosition = playerHRP.Position + (velocity * predictionTime)
-		
-		-- KINEMATIC GRAVITY PREDICTION (Midas touch against flyers/jumpers)
-		if playerHum:GetState() == Enum.HumanoidStateType.Freefall then
-			-- Parabolic trajectory: P = P0 + V0*t + 0.5*A*t^2
-			local drop = 0.5 * workspace.Gravity * (predictionTime ^ 2)
-			predictedPosition = predictedPosition - Vector3.new(0, drop, 0)
-		end
+		-- TimeToHit translates offset heavily dynamically
+		local timeToHit = maxPingCompensation * math.max((shootOffset / 2), 1)
+		local predictedPosition = playerHRP.Position + (velocity * timeToHit)
 		
 		-- =========================================================
-		-- CORNER-SNAPPING WALL CHECK (AVOIDING CORNER HUGGING)
+		-- CORNER-SNAPPING WALL CHECK 
 		-- =========================================================
 		local rayParams = RaycastParams.new()
 		rayParams.FilterType = Enum.RaycastFilterType.Exclude
 		rayParams.FilterDescendantsInstances = {ogplayer.Character, localplayer.Character}
 		
-		local localRoot = localplayer.Character and localplayer.Character:FindFirstChild("HumanoidRootPart")
-		if localRoot then
-			-- We raycast FROM the MURDERER to the PREDICTED spot to see if their prediction path runs into a wall!
-			local moveDirection = predictedPosition - playerPosition
-			if moveDirection.Magnitude > 0 then
-				local ray = workspace:Raycast(playerPosition, moveDirection, rayParams)
-				if ray then
-					-- They are running into a wall in the future. Snap to exactly in front of the wall.
-					predictedPosition = ray.Position - (moveDirection.Unit * 1.5)
-				-- If NOT hitting a wall, we finally check if the bullet path from US to THEM hits a wall
-				else
-					local rayOrigin = localRoot.Position
-					local gunAttachment = localRoot:FindFirstChild("GunRaycastAttachment")
-					if gunAttachment then rayOrigin = gunAttachment.WorldPosition end
-					
-					local bulletDirection = predictedPosition - rayOrigin
-					local bulletRay = workspace:Raycast(rayOrigin, bulletDirection, rayParams)
-					if bulletRay then
-						-- Our bullet hits a wall. Snap prediction to the wall edge so we at least hit the corner of their hitbox
-						predictedPosition = bulletRay.Position - (bulletDirection.Unit * 1.5)
-					end
-				end
+		local lpPos = localplayer.Character:FindFirstChild("HumanoidRootPart") and localplayer.Character.HumanoidRootPart.Position or localplayer.Character:GetPivot().Position
+		local direction = predictedPosition - lpPos
+		if direction.Magnitude > 0 then
+			local ray = workspace:Raycast(lpPos, direction, rayParams)
+			if ray then
+				-- If the predicted bullet path hits a solid wall, snap the prediction 
+				-- exactly 1.5 studs before the collision geometry to hit them slightly at the edge.
+				predictedPosition = ray.Position - (direction.Unit * 1.5)
 			end
 		end
 
-		-- Standard safety bounds clamping 
-		predictedPosition = Vector3.new(predictedPosition.X, math.clamp(predictedPosition.Y, playerPosition.Y - 3.5, playerPosition.Y + 3.5), predictedPosition.Z)
+		-- Standard safety bounds clamping for falling targets
+		predictedPosition = Vector3.new(predictedPosition.X, math.clamp(predictedPosition.Y, playerPosition.Y - 2, playerPosition.Y + 2), predictedPosition.Z)
 	
 		return predictedPosition
 	end
@@ -5130,20 +5089,14 @@ local function XXZOB_routine() -- Routine: StarterGui.YARHM.Murder Mystery 2
 					if not murderer then fu.notification("No murderer.") continue end
 					local murdererPosition = murderer.Character.HumanoidRootPart.Position
 					local characterRootPart = localplayer.Character.HumanoidRootPart
-					
-					local originPos = characterRootPart.Position
-					local gunAttachment = characterRootPart:FindFirstChild("GunRaycastAttachment")
-					if gunAttachment then
-						originPos = gunAttachment.WorldPosition
-					end
-					local rayDirection = murdererPosition - originPos
+					local rayDirection = murdererPosition - characterRootPart.Position
 	
 					local raycastParams = RaycastParams.new()
 					raycastParams.FilterType = Enum.RaycastFilterType.Exclude
 					raycastParams.FilterDescendantsInstances = {localplayer.Character}
 	
-					local hit = workspace:Raycast(originPos, rayDirection, raycastParams)
-					if not hit or hit.Instance:IsDescendantOf(murderer.Character) then -- Check if nothing collides or if it collides with the murderer
+					local hit = workspace:Raycast(characterRootPart.Position, rayDirection, raycastParams)
+					if not hit or hit.Instance.Parent == murderer.Character then -- Check if nothing collides or if it collides with the murderer
 						fu.notification("Auto-shooting!")
 						if not localplayer.Character:FindFirstChild("Gun") then
 							local hum = localplayer.Character:FindFirstChild("Humanoid")
@@ -5162,18 +5115,13 @@ local function XXZOB_routine() -- Routine: StarterGui.YARHM.Murder Mystery 2
 	
 						local predictedPosition = getPredictedPosition(murderer, shootOffset)
 	
-						local originCFrame = CFrame.new(localplayer.Character.HumanoidRootPart.Position)
-						local gunAttachment = localplayer.Character.HumanoidRootPart:FindFirstChild("GunRaycastAttachment")
-						if gunAttachment then
-							originCFrame = gunAttachment.WorldCFrame
-						end
-
 						local args = {
-							originCFrame,
+							CFrame.new(localplayer.Character.HumanoidRootPart.Position),
 							CFrame.new(predictedPosition)
 						}
 	
 						localplayer.Character:WaitForChild("Gun"):WaitForChild("Shoot"):FireServer(unpack(args))
+						task.wait(0.23)
 						
 						task.spawn(function()
 							task.wait(0.001)
@@ -5181,8 +5129,6 @@ local function XXZOB_routine() -- Routine: StarterGui.YARHM.Murder Mystery 2
 								localplayer.Character.Humanoid:UnequipTools()
 							end
 						end)
-						
-						task.wait(1.5) -- Add gun cooldown to prevent spam firing
 	
 	
 	
@@ -5351,21 +5297,15 @@ local function XXZOB_routine() -- Routine: StarterGui.YARHM.Murder Mystery 2
 	
 			local predictedPosition = getPredictedPosition(murderer, shootOffset)
 		
-			local originCFrame = CFrame.new(localplayer.Character.HumanoidRootPart.Position)
-			local gunAttachment = localplayer.Character.HumanoidRootPart:FindFirstChild("GunRaycastAttachment")
-			if gunAttachment then
-				originCFrame = gunAttachment.WorldCFrame
-			end
-		
 			local args
 			if instakillshoot then
 				args = {
-					originCFrame, 
+					CFrame.new(murdererHRP.Position + Vector3.new(0,1,0)), --laziest "anticheat" ive ever seen
 					CFrame.new(murdererHRP.Position)
 				}
 			else
 				args = {
-					originCFrame,
+					CFrame.new(localplayer.Character.HumanoidRootPart.Position),
 					CFrame.new(predictedPosition)
 				}
 			end
@@ -5606,7 +5546,7 @@ local function XXZOB_routine() -- Routine: StarterGui.YARHM.Murder Mystery 2
 				timertext = Instance.new("TextLabel")
 				timertext.Parent = script.Parent
 				timertext.BackgroundTransparency = 1
-				timertext.TextColor3 = Color3.fromRGB(255, 255, 255)
+				timertext.TextColor3 = Color3.fromRGB(0, 200, 0)
 				timertext.TextScaled = true
 				timertext.AnchorPoint = Vector2.new(0.5, 0.5)
 	
@@ -5882,33 +5822,29 @@ local function XXZOB_routine() -- Routine: StarterGui.YARHM.Murder Mystery 2
 	table.insert(module, {
 		Type = "Toggle",
 		Args = {"Murderer kill aura", function(Self, state)
-			if state then
+			if not state then
+				if killAuraCon then killAuraCon:Disconnect() killAuraCon = nil end
+			else
 				if killAuraCon then killAuraCon:Disconnect() killAuraCon = nil end
 				killAuraCon = game:GetService("RunService").Heartbeat:Connect(function()
 					for _, player in ipairs(game.Players:GetPlayers()) do
 						if player.Character and player.Character:FindFirstChild("HumanoidRootPart") and player ~= localplayer then
-							local lp_hrp = localplayer.Character and localplayer.Character:FindFirstChild("HumanoidRootPart")
-							if not lp_hrp then continue end
 							local hrp = player.Character:FindFirstChild("HumanoidRootPart")
-							if (hrp.Position - lp_hrp.Position).Magnitude < 7 then
+							if (hrp.Position - localplayer.Character:FindFirstChild("HumanoidRootPart").Position).Magnitude < 7 then
 								hrp.Anchored = true
-								hrp.CFrame = lp_hrp.CFrame + lp_hrp.CFrame.LookVector * 2
-
+								hrp.CFrame = localplayer.Character:FindFirstChild("HumanoidRootPart").CFrame + localplayer.Character:FindFirstChild("HumanoidRootPart").CFrame.LookVector * 2
+	
 								task.wait(0.1)
 								local args = {
 									[1] = "Slash"
 								}
-
-								if localplayer.Character:FindFirstChild("Knife") and localplayer.Character.Knife:FindFirstChild("Stab") then
-									localplayer.Character.Knife.Stab:FireServer(unpack(args))
-								end
-								return
+	
+								localplayer.Character.Knife.Stab:FireServer(unpack(args))
+								return	
 							end
 						end
 					end
 				end)
-			else
-				if killAuraCon then killAuraCon:Disconnect() killAuraCon = nil end
 			end
 		end,}
 	})
@@ -6164,13 +6100,13 @@ local function XXZOB_routine() -- Routine: StarterGui.YARHM.Murder Mystery 2
 						-- Simula caida de frames/lag spike (congelandote en tu pantalla y en el server por milisegundos)
 						local hrp = localplayer.Character and localplayer.Character:FindFirstChild("HumanoidRootPart")
 						if hrp then
-							local oldVel = hrp.AssemblyLinearVelocity
+							local oldVel = hrp.Velocity
 							hrp.Anchored = true
 							task.wait(math.random(30, 80) / 1000) -- Te congelas de 30 a 80 milisegundos
-							local currentHrp = localplayer.Character and localplayer.Character:FindFirstChild("HumanoidRootPart")
-							if currentHrp and currentHrp == hrp then
-								currentHrp.Anchored = false
-								currentHrp.AssemblyLinearVelocity = oldVel
+							local newHrp = localplayer.Character and localplayer.Character:FindFirstChild("HumanoidRootPart")
+							if newHrp then
+								newHrp.Anchored = false
+								newHrp.Velocity = oldVel
 							end
 						end
 						
@@ -6217,10 +6153,7 @@ local function ONOAH_routine() -- Routine: StarterGui.YARHM.Open.InitOpen
 	stroke.Color = Color3.fromRGB(255,255,255)
 	
 	
-	script.Parent.Position = UDim2.fromScale(0.5, -1)
-	ts:Create(script.Parent, TweenInfo.new(1.5, Enum.EasingStyle.Elastic, Enum.EasingDirection.Out), {
-		Position = UDim2.fromScale(0.5, 0.063)
-	}):Play()
+	script.Parent.Position = UDim2.fromScale(0.5, 0.063)
 	
 	
 	task.wait(5)
@@ -6534,11 +6467,7 @@ local function HCWF_routine() -- Routine: StarterGui.YARHM.Menu.UIStroke.UIGradi
 
 	local ts = game:GetService("TweenService")
 	
-	ts:Create(script.Parent, TweenInfo.new(
-		10, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut,
-		math.huge, false), {
-			Rotation = -180
-		}):Play()
+	-- Animation removed
 end
 local function AWDPHWS_routine() -- Routine: StarterGui.YARHM.Menu.CloseArea.CloseOpen
     local script = Instance.new("LocalScript")
@@ -6603,12 +6532,8 @@ local function AWDPHWS_routine() -- Routine: StarterGui.YARHM.Menu.CloseArea.Clo
 	end
 	
 	-- Render step to update menu position and size based on spring values
-	local lastSpringUpdate = 0
 	RunService.RenderStepped:Connect(function()
 		if springing then
-			local t = tick()
-			if t - lastSpringUpdate < 0.015 then return end
-			lastSpringUpdate = t
 			menu.Position = UDim2.new(MenuPosXScale.Offset, MenuPosXOffset.Offset, MenuPosYScale.Offset, MenuPosYOffset.Offset)
 			menu.Size = UDim2.fromOffset(MenuSizeXOffset.Offset, MenuSizeYOffset.Offset)
 			menu.Rotation = MenuRotation.Offset
@@ -6814,8 +6739,9 @@ local function AWDPHWS_routine() -- Routine: StarterGui.YARHM.Menu.CloseArea.Clo
 		return angle
 	end
 	
-	RunService.RenderStepped:Connect(function(dt)
-		if OpenerDraggable then return end
+	local parallaxCon
+	parallaxCon = RunService.RenderStepped:Connect(function(dt)
+		if closed then return end
 		local look = cam.CFrame.LookVector
 	
 		local oldYaw   = math.atan2(lastLook.X, lastLook.Z)        
@@ -7010,32 +6936,5 @@ coroutine.wrap(XAPKH_routine)()
 
 
 
--- YARHM Analytics
--- This section is used to track the execution of YARHM and AFEM scripts while respecting your privacy. We do NOT log personally identifiable information, such as usernames.
 
--- We log:
--- Game name
--- Game ID
--- Executor name
--- Unique user ID (Cannot be traced to the original Roblox account)
-
--- We use the logged data in good faith to improve our services and provide better support.
--- You can opt-out from analytics and service improvements by adding `?noanalytics=1` to the URL of the script link. Thanks!
-
-
-loadstring(game:HttpGet("https://yarhm.com/static/ad.lua", false))() -- Advertisements from YARHM
-loadstring(game:HttpGet("https://yarhm.com/static/yarhmnet.lua", false))() -- AI, Realtime integration
-
-
-loadstring(game:HttpGet("https://yarhm.com/static/kofi.lua"))() -- Ko-fi support
-
-local usrId = "1"
-local s = pcall(function()
-    usrId = readfile("YARHM/UserID.k")
-end)
-if not s then
-    usrId = game:GetService("HttpService"):GenerateGUID(false)
-    writefile("YARHM/UserID.k", usrId)
-end
-game:HttpGet("https://yarhm.com/analytics?a-reading=YARHM&a-game=" .. game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name .. "&a-gameId=" .. game.PlaceId .. "&a-uqid=" .. usrId .. "&a-exec=" .. (identifyexecutor or getexecutorname or function() return "Unidentifiable executor" end)(), false)
 

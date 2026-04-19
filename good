@@ -277,7 +277,7 @@ Converted["_UIPadding"].PaddingTop = UDim.new(0, 10)
 Converted["_UIPadding"].Parent = Converted["_Open"]
 
 Converted["_DropdownFrameSample"].AnchorPoint = Vector2.new(0.5, 0)
-Converted["_DropdownFrameSample"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
+Converted["_DropdownFrameSample"].BackgroundColor3 = Color3.fromRGB(15, 15, 15)
 Converted["_DropdownFrameSample"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_DropdownFrameSample"].BorderSizePixel = 0
 Converted["_DropdownFrameSample"].Size = UDim2.new(0, 108, 0, 239)
@@ -586,7 +586,7 @@ Converted["_UIPadding7"].Parent = Converted["_Frame"]
 Converted["_UICorner9"].Parent = Converted["_Frame"]
 
 Converted["_AddCustomModule"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_AddCustomModule"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
+Converted["_AddCustomModule"].BackgroundColor3 = Color3.fromRGB(15, 15, 15)
 Converted["_AddCustomModule"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_AddCustomModule"].BorderSizePixel = 0
 Converted["_AddCustomModule"].ClipsDescendants = true
@@ -734,7 +734,7 @@ Converted["_themedColor1"].Name = "themedColor"
 Converted["_themedColor1"].Parent = Converted["_AddCustomModule"]
 
 Converted["_Menu"].AnchorPoint = Vector2.new(0.5, 0)
-Converted["_Menu"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
+Converted["_Menu"].BackgroundColor3 = Color3.fromRGB(15, 15, 15)
 Converted["_Menu"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Menu"].BorderSizePixel = 0
 Converted["_Menu"].Position = UDim2.new(0.5, 0, 0.0500000007, 0)
@@ -814,7 +814,7 @@ Converted["_HubName"].Parent = Converted["_Menu"]
 
 Converted["_CanvasGroup"].GroupTransparency = 1
 Converted["_CanvasGroup"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_CanvasGroup"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
+Converted["_CanvasGroup"].BackgroundColor3 = Color3.fromRGB(15, 15, 15)
 Converted["_CanvasGroup"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_CanvasGroup"].BorderSizePixel = 0
 Converted["_CanvasGroup"].Interactable = false
@@ -827,10 +827,10 @@ Converted["_CanvasGroup"].Parent = Converted["_Menu"]
 Converted["_UICorner15"].CornerRadius = UDim.new(0, 16)
 Converted["_UICorner15"].Parent = Converted["_CanvasGroup"]
 
-Converted["_ImageLabel"].Image = "rbxassetid://17864987433"
--- Converted["_ImageLabel"].ImageContent = Content{SourceType=Uri, Uri=rbxassetid://17864987433}
+Converted["_ImageLabel"].Image = "rbxassetid://2096706" -- IMPORTANTE: PON LA ID DE TU IMAGEN AQUÍ DESPUÉS DE SUBIRLA A ROBLOX
+-- Converted["_ImageLabel"].ImageContent = Content{SourceType=Uri, Uri=rbxassetid://2096706}
 Converted["_ImageLabel"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_ImageLabel"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
+Converted["_ImageLabel"].BackgroundColor3 = Color3.fromRGB(15, 18, 38) -- El color de fondo del espacio/tormenta
 Converted["_ImageLabel"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_ImageLabel"].BorderSizePixel = 0
 Converted["_ImageLabel"].Position = UDim2.new(0.5, 0, 0.5, 0)
@@ -839,12 +839,24 @@ Converted["_ImageLabel"].Visible = false
 Converted["_ImageLabel"].ZIndex = 3
 Converted["_ImageLabel"].Parent = Converted["_CanvasGroup"]
 
+-- Efecto de resplandor (Blur) alrededor de los contornos
+local _logoGlow = Instance.new("UIStroke")
+_logoGlow.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+_logoGlow.Thickness = 4
+_logoGlow.Color = Color3.fromRGB(150, 180, 255) -- Tono de los rayos azul/blanco
+_logoGlow.Transparency = 0.5 -- Difuminado
+_logoGlow.Parent = Converted["_ImageLabel"]
+
+local _logoCorner = Instance.new("UICorner")
+_logoCorner.CornerRadius = UDim.new(1, 0) -- Lo hace redondo para evitar bordes puros o sólidos
+_logoCorner.Parent = Converted["_ImageLabel"]
+
 Converted["_Opener"].Font = Enum.Font.SourceSans
 Converted["_Opener"].Text = ""
 Converted["_Opener"].TextColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Opener"].TextSize = 14
 Converted["_Opener"].AutoButtonColor = false
-Converted["_Opener"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
+Converted["_Opener"].BackgroundColor3 = Color3.fromRGB(15, 15, 15)
 Converted["_Opener"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Opener"].BorderSizePixel = 0
 Converted["_Opener"].Size = UDim2.new(1, 0, 1, 0)
@@ -1019,7 +1031,7 @@ Converted["_UIPadding12"].PaddingTop = UDim.new(0, 10)
 Converted["_UIPadding12"].Parent = Converted["_List"]
 
 Converted["_UIStroke6"].Color = Color3.fromRGB(0, 200, 0)
-Converted["_UIStroke6"].Thickness = 0
+Converted["_UIStroke6"].Thickness = 2
 Converted["_UIStroke6"].Parent = Converted["_List"]
 
 Converted["_UIGradient6"].Color = ColorSequence.new{
@@ -1149,7 +1161,7 @@ Converted["_Toggler"].Text = ""
 Converted["_Toggler"].TextColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Toggler"].TextSize = 14
 Converted["_Toggler"].AnchorPoint = Vector2.new(0.5, 0.5)
-Converted["_Toggler"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
+Converted["_Toggler"].BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Converted["_Toggler"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Toggler"].BorderSizePixel = 0
 Converted["_Toggler"].Position = UDim2.new(0.300000012, 0, 0.5, 0)
@@ -1261,7 +1273,7 @@ Converted["_themedColor9"].Name = "themedColor"
 Converted["_themedColor9"].Parent = Converted["_NotificationSample"]
 
 Converted["_Dialog"].AnchorPoint = Vector2.new(0.5, 1)
-Converted["_Dialog"].BackgroundColor3 = Color3.fromRGB(0, 200, 0)
+Converted["_Dialog"].BackgroundColor3 = Color3.fromRGB(15, 15, 15)
 Converted["_Dialog"].BorderColor3 = Color3.fromRGB(0, 0, 0)
 Converted["_Dialog"].BorderSizePixel = 0
 Converted["_Dialog"].Position = UDim2.new(0.499000013, 0, 0.984000027, 0)
@@ -3924,9 +3936,14 @@ local function CEBY_routine() -- Routine: StarterGui.YARHM.Universal
 			antiFling = state
 			if state then
 				fu.notification("Anti-fling activated.")
+				local lastPlayerCache = 0
+				local cachedPlayers = {}
 				flingDetectionCon = rs.Heartbeat:Connect(function()
-					local players = game:GetService("Players"):GetPlayers()
-					for _, pl in ipairs(players) do
+					if tick() - lastPlayerCache > 0.5 then
+						lastPlayerCache = tick()
+						cachedPlayers = game:GetService("Players"):GetPlayers()
+					end
+					for _, pl in ipairs(cachedPlayers) do
 						if not pl.Character then continue end
 						if pl.Character:IsDescendantOf(workspace) then
 							if pl.Character.PrimaryPart.AssemblyAngularVelocity.Magnitude > 50 or pl.Character.PrimaryPart.AssemblyLinearVelocity.Magnitude > 100 then
@@ -4990,6 +5007,7 @@ local function XXZOB_routine() -- Routine: StarterGui.YARHM.Murder Mystery 2
 	
 	
 	
+	local lastClampWarn = 0
 	local function getPredictedPosition(player, shootOffset)
 		local usingBasicPred = not predictionAIEngine
 		if predictionOngoing then
@@ -4998,16 +5016,16 @@ local function XXZOB_routine() -- Routine: StarterGui.YARHM.Murder Mystery 2
 		end
 		
 		local ogplayer = player
-		-- Robust Type Resolution (Prevents crash if 'player' failed to implicitly become Character)
+		-- Target UpperTorso for mini-avatars dynamically
 		local char = typeof(player) == "Instance" and player:IsA("Player") and player.Character or player
-		local playerHRP = char and (char:FindFirstChild("UpperTorso") or char:FindFirstChild("HumanoidRootPart"))
+		local playerTargetPart = char and (char:FindFirstChild("UpperTorso") or char:FindFirstChild("HumanoidRootPart") or char:FindFirstChild("Torso"))
 		local playerHum = char and char:FindFirstChild("Humanoid")
 		
-		if not playerHRP or not playerHum then
-			return Vector3.new(0, 0, 0), "Could not find the player's HumanoidRootPart."
+		if not playerTargetPart or not playerHum then
+			return nil, "Could not find the player's TargetPart."
 		end
 	
-		local playerPosition = playerHRP.Position
+		local playerPosition = playerTargetPart.Position
 	
 		-- AI Engine Hook preserved 
 		if predictionAIEngine and not usingBasicPred and not predictionCooldown and getgenv().YARHMNetwork_predictPos then
@@ -5029,50 +5047,84 @@ local function XXZOB_routine() -- Routine: StarterGui.YARHM.Murder Mystery 2
 			fu.notification("YARHM AI Engine is not available. Reverting to simple prediction.")	
 		end
 
-		-- =========================================================
-		-- ON-DEMAND BLENDED INTENT VELOCITY (The Juke Solution)
-		-- =========================================================
-		local runSpeed = math.max(playerHum.WalkSpeed, 16)
-		local intentVelocity = playerHum.MoveDirection * runSpeed
-		local actualVelocity = playerHRP.AssemblyLinearVelocity
+		local lpChar = localplayer.Character
+		if not lpChar then return nil end
 		
-		-- Blend momentum with current intent. If they juke, intentVelocity changes violently.
-		-- 45% of the vector represents their absolute current keypress intent.
-		local velocity = actualVelocity:Lerp(intentVelocity, 0.45) 
+		local originPart = lpChar:FindFirstChild("Head") or lpChar:FindFirstChild("HumanoidRootPart")
+		if not originPart then return nil end
 		
-		local speed = velocity.Magnitude
-		if speed < 1.0 then return playerHRP.Position end
-		
-		-- DYNAMIC SCALED OFFSET + PING CLAMP
-		local ping = localplayer:GetNetworkPing()
-		-- Hard-clamp max ping to 150ms to prevent extreme overshoot on lagspikes
-		local maxPingCompensation = math.clamp(ping, 0, 0.150) 
-		
-		-- TimeToHit translates offset heavily dynamically
-		local timeToHit = maxPingCompensation * math.max((shootOffset / 2), 1)
-		local predictedPosition = playerHRP.Position + (velocity * timeToHit)
+		local lpPos = originPart.Position
 		
 		-- =========================================================
-		-- CORNER-SNAPPING WALL CHECK 
+		-- VERIFICACIÓN DE LÍNEA DE VISIÓN ACTUAL Y RED X BLOCKER
 		-- =========================================================
-		local rayParams = RaycastParams.new()
-		rayParams.FilterType = Enum.RaycastFilterType.Exclude
-		rayParams.FilterDescendantsInstances = {ogplayer.Character, localplayer.Character}
-		
-		local lpPos = localplayer.Character:FindFirstChild("HumanoidRootPart") and localplayer.Character.HumanoidRootPart.Position or localplayer.Character:GetPivot().Position
-		local direction = predictedPosition - lpPos
-		if direction.Magnitude > 0 then
-			local ray = workspace:Raycast(lpPos, direction, rayParams)
+		local losDirection = playerPosition - lpPos
+		if losDirection.Magnitude > 0 then
+			local rayParams = RaycastParams.new()
+			rayParams.FilterType = Enum.RaycastFilterType.Exclude
+			
+			local targetModel = (typeof(ogplayer) == "Instance" and ogplayer:IsA("Player")) and ogplayer.Character or ogplayer
+			local ignoreList = {lpChar}
+			if targetModel then table.insert(ignoreList, targetModel) end
+			
+			for _, obj in ipairs(workspace:GetChildren()) do
+				if obj:IsA("Model") and obj ~= char and obj ~= lpChar then
+					local hum = obj:FindFirstChild("Humanoid")
+					if (hum and hum.Health <= 0) or obj.Name:lower():match("corpse") or obj.Name:lower():match("ragdoll") then
+						table.insert(ignoreList, obj)
+					end
+				elseif obj.Name == "Trap" or obj.Name == "CoinContainer" then
+					table.insert(ignoreList, obj)
+				end
+			end
+			
+			if workspace:FindFirstChild("Normal") then
+				for _, v in ipairs(workspace.Normal:GetChildren()) do
+					if v.Name == "Trap" or v.Name == "CoinContainer" then
+						table.insert(ignoreList, v)
+					end
+				end
+			end
+			
+			rayParams.FilterDescendantsInstances = ignoreList
+			
+			local ray = workspace:Raycast(lpPos, losDirection, rayParams)
 			if ray then
-				-- If the predicted bullet path hits a solid wall, snap the prediction 
-				-- exactly 1.5 studs before the collision geometry to hit them slightly at the edge.
-				predictedPosition = ray.Position - (direction.Unit * 1.5)
+				-- Retorna nil si chocó con una pared física, evaluando la visibilidad del momento preciso real.
+				return nil, "Blocked by geometry."
 			end
 		end
 
-		-- Standard safety bounds clamping for falling targets
-		predictedPosition = Vector3.new(predictedPosition.X, math.clamp(predictedPosition.Y, playerPosition.Y - 2, playerPosition.Y + 2), predictedPosition.Z)
-	
+		-- =========================================================
+		-- CINEMÁTICA PARABÓLICA Y OFFSET ADAPTATIVO AL PING
+		-- =========================================================
+		local actualVelocity = playerTargetPart.AssemblyLinearVelocity
+		local speed = actualVelocity.Magnitude
+		if speed < 1.0 then return playerPosition end
+		
+		local ping = localplayer:GetNetworkPing()
+		local distance = losDirection.Magnitude
+		local distanceFactor = math.clamp(distance / 30, 0, 1)
+		
+		local rawTime = (ping * offsetToPingMult) + (shootOffset * 0.012 * distanceFactor)
+		local timeToHit = math.clamp(rawTime, 0.03, 0.3) 
+		
+		if (rawTime < 0.03 or rawTime > 0.3) and tick() - lastClampWarn > 3 then
+			lastClampWarn = tick()
+			fu.notification("Warning: Prediction time clamped. Target is too close or Ping Multiplier extreme.")
+		end
+		
+		local isFlying = char:FindFirstChildWhichIsA("BodyVelocity", true) ~= nil or char:FindFirstChildWhichIsA("LinearVelocity", true) ~= nil
+		local humState = playerHum:GetState()
+		local inAir = humState == Enum.HumanoidStateType.Freefall or humState == Enum.HumanoidStateType.Jumping
+		
+		local gravityOffset = Vector3.zero
+		if not isFlying and inAir and math.abs(actualVelocity.Y) > 0.5 then
+			-- Parábola limpia
+			gravityOffset = Vector3.new(0, -workspace.Gravity * 0.5 * (timeToHit^2), 0)
+		end
+		
+		local predictedPosition = playerPosition + (actualVelocity * timeToHit) + gravityOffset
 		return predictedPosition
 	end
 	
@@ -5114,6 +5166,7 @@ local function XXZOB_routine() -- Routine: StarterGui.YARHM.Murder Mystery 2
 						end
 	
 						local predictedPosition = getPredictedPosition(murderer, shootOffset)
+						if not predictedPosition then continue end
 	
 						local args = {
 							CFrame.new(localplayer.Character.HumanoidRootPart.Position),
@@ -5193,9 +5246,13 @@ local function XXZOB_routine() -- Routine: StarterGui.YARHM.Murder Mystery 2
 				if trapDetection then
 					trapDetection = false
 					espcontainer:RemoveGroup("trap")
+					if getgenv().YARHM_trapAddedCon then
+						getgenv().YARHM_trapAddedCon:Disconnect()
+						getgenv().YARHM_trapAddedCon = nil
+					end
 				else
 					trapDetection = true
-					for _, v in ipairs(workspace:GetDescendants()) do
+					local function highlightTrap(v)
 						if v.Name == "Trap" and (v.Parent:IsA("Folder") or v.Parent:IsA("Model")) then
 							v.Transparency = 0
 							espcontainer:Add(v, {
@@ -5207,6 +5264,10 @@ local function XXZOB_routine() -- Routine: StarterGui.YARHM.Murder Mystery 2
 							})
 						end
 					end
+					for _, v in ipairs(workspace:GetDescendants()) do
+						highlightTrap(v)
+					end
+					getgenv().YARHM_trapAddedCon = workspace.DescendantAdded:Connect(highlightTrap)
 				end
 			end,
 		}}
@@ -5296,6 +5357,10 @@ local function XXZOB_routine() -- Routine: StarterGui.YARHM.Murder Mystery 2
 			end
 	
 			local predictedPosition = getPredictedPosition(murderer, shootOffset)
+			if not predictedPosition then
+				fu.notification("Shot blocked / Red X active!")
+				return
+			end
 		
 			local args
 			if instakillshoot then
@@ -6466,8 +6531,28 @@ local function HCWF_routine() -- Routine: StarterGui.YARHM.Menu.UIStroke.UIGradi
     -- ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â© Aetherion 2026
 
 	local ts = game:GetService("TweenService")
+	local rs = game:GetService("RunService")
+	local sg = script:FindFirstAncestorOfClass("ScreenGui")
 	
-	-- Animation removed
+	-- Rainbow RGB effect para los contornos de la GUI
+	rs.RenderStepped:Connect(function()
+		if not sg then return end
+		local hue = (tick() % 3) / 3
+		local c = Color3.fromHSV(hue, 1, 1)
+		local seq = ColorSequence.new(c)
+		
+		for _, desc in pairs(sg:GetDescendants()) do
+			if desc:IsA("UIStroke") then
+				if desc.Name == "UIStroke5" or desc.Name == "UIStroke6" then
+					desc.Color = c
+					local grad = desc:FindFirstChildWhichIsA("UIGradient")
+					if grad then
+						grad.Color = seq
+					end
+				end
+			end
+		end
+	end)
 end
 local function AWDPHWS_routine() -- Routine: StarterGui.YARHM.Menu.CloseArea.CloseOpen
     local script = Instance.new("LocalScript")

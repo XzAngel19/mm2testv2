@@ -4534,6 +4534,7 @@ local function XXZOB_routine() -- Routine: StarterGui.YARHM.Murder Mystery 2
 	local autoShooting = false
 	local shootOffset = 2.8
 	local offsetToPingMult = 1
+	local xEvaderEnabled = false
 	
 	local predictionAIEngine = false
 	local predictionOngoing = false
@@ -5007,77 +5008,154 @@ local function XXZOB_routine() -- Routine: StarterGui.YARHM.Murder Mystery 2
 	
 	
 	
-	local lastClampWarn = 0
+	-- ═══════════════════════════════════════════════
+	-- PREDICTION STATE  (place above getPredictedPosition)
+	-- ═══════════════════════════════════════════════
+	local lastClampWarn   = 0
+	local jukeWarnClock   = 0
+	local velHistory      = {}   -- {time, velocity} ring buffer, max 6 frames
+	local VEL_HISTORY_MAX = 6
+	local JUKE_THRESHOLD  = 60   -- studs/s directional change to count as a juke
+	local JUKE_DAMP       = 0.45 -- how much to dampen prediction when juke detected
+	
+	local function recordVelocity(vel)
+		table.insert(velHistory, {t = tick(), v = vel})
+		while #velHistory > VEL_HISTORY_MAX do
+			table.remove(velHistory, 1)
+		end
+	end
+	
+	-- Returns true + description string when a juke/erratic movement is detected.
+	-- Also returns a 0-1 confidence multiplier (1 = trust full prediction, 0 = do not predict).
+	local function analyseMovement()
+		if #velHistory < 3 then return false, 1 end
+	
+		local latest  = velHistory[#velHistory].v
+		local oldest  = velHistory[1].v
+	
+		-- Horizontal direction change magnitude
+		local latestH  = Vector3.new(latest.X,  0, latest.Z)
+		local oldestH  = Vector3.new(oldest.X,  0, oldest.Z)
+		local deltaH   = (latestH - oldestH).Magnitude
+	
+		-- Count how many times horizontal direction reversed in the window
+		local reversals = 0
+		for i = 2, #velHistory do
+			local prev = Vector3.new(velHistory[i-1].v.X, 0, velHistory[i-1].v.Z)
+			local curr = Vector3.new(velHistory[i].v.X,   0, velHistory[i].v.Z)
+			if prev.Magnitude > 2 and curr.Magnitude > 2 then
+				local dot = prev.Unit:Dot(curr.Unit)
+				if dot < -0.35 then reversals = reversals + 1 end
+			end
+		end
+	
+		-- Spam-jump: Y velocity alternates sign
+		local ySignChanges = 0
+		for i = 2, #velHistory do
+			if math.sign(velHistory[i].v.Y) ~= math.sign(velHistory[i-1].v.Y)
+			   and math.abs(velHistory[i].v.Y) > 5 then
+				ySignChanges = ySignChanges + 1
+			end
+		end
+	
+		local isJuking     = deltaH > JUKE_THRESHOLD or reversals >= 2
+		local isSpamJump   = ySignChanges >= 2
+		local confidence   = 1
+	
+		if isJuking   then confidence = confidence * JUKE_DAMP end
+		if isSpamJump then confidence = confidence * 0.6 end
+	
+		local reason = isJuking and "JUKING" or (isSpamJump and "SPAM-JUMP" or "")
+		return (isJuking or isSpamJump), confidence, reason
+	end
+	
+	
+	-- ═══════════════════════════════════════════════
+	-- REPLACEMENT getPredictedPosition
+	-- ═══════════════════════════════════════════════
 	local function getPredictedPosition(player, shootOffset)
 		local usingBasicPred = not predictionAIEngine
 		if predictionOngoing then
 			fu.notification("Cancelling AI prediction, using fast intent prediction.")
 			usingBasicPred = true
 		end
-		
+	
 		local ogplayer = player
-		-- Target UpperTorso for mini-avatars dynamically
 		local char = typeof(player) == "Instance" and player:IsA("Player") and player.Character or player
-		local playerTargetPart = char and (char:FindFirstChild("UpperTorso") or char:FindFirstChild("HumanoidRootPart") or char:FindFirstChild("Torso"))
+		local playerTargetPart = char and (
+			char:FindFirstChild("UpperTorso") or
+			char:FindFirstChild("HumanoidRootPart") or
+			char:FindFirstChild("Torso")
+		)
 		local playerHum = char and char:FindFirstChild("Humanoid")
-		
+	
 		if not playerTargetPart or not playerHum then
 			return nil, "Could not find the player's TargetPart."
 		end
 	
 		local playerPosition = playerTargetPart.Position
 	
-		-- AI Engine Hook preserved 
+		-- AI engine hook (unchanged)
 		if predictionAIEngine and not usingBasicPred and not predictionCooldown and getgenv().YARHMNetwork_predictPos then
 			if (playerPosition - localplayer.Character:FindFirstChild("UpperTorso").Position).Magnitude > 20 then
 				fu.notification("Calculating trajectory...")
 				predictionCooldown = true
-				predictionOngoing = true
+				predictionOngoing  = true
 				local predictedPosition = getgenv().YARHMNetwork_predictPos(ogplayer)
 				predictionOngoing = false
-				task.spawn(function()
-					task.wait(5)
-					predictionCooldown = false
-				end)
+				task.spawn(function() task.wait(5) predictionCooldown = false end)
 				return predictedPosition
 			else
-				fu.notification("Murderer is too close for trajectory prediction. Reverting to simple prediction.")
+				fu.notification("Murderer too close for trajectory prediction. Reverting.")
 			end
-		elseif predictionAIEngine and not getgenv().YARHMNetwork.predictPos then
-			fu.notification("YARHM AI Engine is not available. Reverting to simple prediction.")	
+		elseif predictionAIEngine and not getgenv().YARHMNetwork_predictPos then
+			fu.notification("YARHM AI Engine not available. Reverting.")
 		end
-
-		local lpChar = localplayer.Character
+	
+		-- ──────────────────────────────────────────
+		-- MY CHARACTER / ORIGIN
+		-- ──────────────────────────────────────────
+		local lpChar   = localplayer.Character
 		if not lpChar then return nil end
-		
+	
 		local originPart = lpChar:FindFirstChild("Head") or lpChar:FindFirstChild("HumanoidRootPart")
 		if not originPart then return nil end
-		
+	
 		local lpPos = originPart.Position
-		
-		-- =========================================================
-		-- VERIFICACIÓN DE LÍNEA DE VISIÓN ACTUAL Y RED X BLOCKER
-		-- =========================================================
+	
+		-- ──────────────────────────────────────────
+		-- LINE-OF-SIGHT CHECK  (current position, not predicted)
+		-- Ghost bodies: search full descendant tree so ragdolls
+		-- inside sub-folders are still excluded correctly.
+		-- ──────────────────────────────────────────
 		local losDirection = playerPosition - lpPos
 		if losDirection.Magnitude > 0 then
 			local rayParams = RaycastParams.new()
 			rayParams.FilterType = Enum.RaycastFilterType.Exclude
-			
-			local targetModel = (typeof(ogplayer) == "Instance" and ogplayer:IsA("Player")) and ogplayer.Character or ogplayer
+	
+			local targetModel = (typeof(ogplayer) == "Instance" and ogplayer:IsA("Player"))
+				and ogplayer.Character or ogplayer
 			local ignoreList = {lpChar}
 			if targetModel then table.insert(ignoreList, targetModel) end
-			
-			for _, obj in ipairs(workspace:GetChildren()) do
+	
+			-- Scan full descendant tree for dead humanoids / corpse models
+			for _, obj in ipairs(workspace:GetDescendants()) do
 				if obj:IsA("Model") and obj ~= char and obj ~= lpChar then
-					local hum = obj:FindFirstChild("Humanoid")
-					if (hum and hum.Health <= 0) or obj.Name:lower():match("corpse") or obj.Name:lower():match("ragdoll") then
+					local hum = obj:FindFirstChildOfClass("Humanoid")
+					if (hum and hum.Health <= 0)
+					   or obj.Name:lower():match("corpse")
+					   or obj.Name:lower():match("ragdoll")
+					   or obj.Name:lower():match("dead") then
 						table.insert(ignoreList, obj)
 					end
-				elseif obj.Name == "Trap" or obj.Name == "CoinContainer" then
-					table.insert(ignoreList, obj)
 				end
 			end
-			
+	
+			-- Ignore game world decorators that falsely block shots
+			for _, name in ipairs({"Trap", "CoinContainer", "GunDrop"}) do
+				local obj = workspace:FindFirstChild(name, true)
+				if obj then table.insert(ignoreList, obj) end
+			end
 			if workspace:FindFirstChild("Normal") then
 				for _, v in ipairs(workspace.Normal:GetChildren()) do
 					if v.Name == "Trap" or v.Name == "CoinContainer" then
@@ -5085,46 +5163,94 @@ local function XXZOB_routine() -- Routine: StarterGui.YARHM.Murder Mystery 2
 					end
 				end
 			end
-			
+	
 			rayParams.FilterDescendantsInstances = ignoreList
-			
 			local ray = workspace:Raycast(lpPos, losDirection, rayParams)
 			if ray then
-				-- Retorna nil si chocó con una pared física, evaluando la visibilidad del momento preciso real.
 				return nil, "Blocked by geometry."
 			end
 		end
-
-		-- =========================================================
-		-- CINEMÁTICA PARABÓLICA Y OFFSET ADAPTATIVO AL PING
-		-- =========================================================
+	
+		-- ──────────────────────────────────────────
+		-- VELOCITY HISTORY + JUKE ANALYSIS
+		-- ──────────────────────────────────────────
 		local actualVelocity = playerTargetPart.AssemblyLinearVelocity
+		recordVelocity(actualVelocity)
+	
 		local speed = actualVelocity.Magnitude
-		if speed < 1.0 then return playerPosition end
-		
-		local ping = localplayer:GetNetworkPing()
-		local distance = losDirection.Magnitude
+		if speed < 1.0 then
+			-- Standing still: no prediction, but still valid shot
+			return playerPosition
+		end
+	
+		local isErratic, confidence, reason = analyseMovement()
+		if isErratic and xEvaderEnabled and tick() - jukeWarnClock > 2 then
+			jukeWarnClock = tick()
+			fu.notification("[PRED] Target is " .. reason .. "! Dampening prediction (x" .. string.format("%.2f", confidence) .. ")")
+		elseif not xEvaderEnabled then
+			confidence = 1
+		end
+	
+		-- ──────────────────────────────────────────
+		-- TIME-TO-HIT: ping + distance-scaled offset
+		-- ──────────────────────────────────────────
+		local ping           = localplayer:GetNetworkPing()
+		local distance       = losDirection.Magnitude
 		local distanceFactor = math.clamp(distance / 30, 0, 1)
-		
-		local rawTime = (ping * offsetToPingMult) + (shootOffset * 0.012 * distanceFactor)
-		local timeToHit = math.clamp(rawTime, 0.03, 0.3) 
-		
+		local rawTime        = (ping * offsetToPingMult) + (shootOffset * 0.012 * distanceFactor)
+		local timeToHit      = math.clamp(rawTime, 0.03, 0.3)
+	
 		if (rawTime < 0.03 or rawTime > 0.3) and tick() - lastClampWarn > 3 then
 			lastClampWarn = tick()
-			fu.notification("Warning: Prediction time clamped. Target is too close or Ping Multiplier extreme.")
+			fu.notification("Warning: Prediction time clamped — check offset/multiplier settings.")
 		end
-		
-		local isFlying = char:FindFirstChildWhichIsA("BodyVelocity", true) ~= nil or char:FindFirstChildWhichIsA("LinearVelocity", true) ~= nil
-		local humState = playerHum:GetState()
-		local inAir = humState == Enum.HumanoidStateType.Freefall or humState == Enum.HumanoidStateType.Jumping
-		
+	
+		-- ──────────────────────────────────────────
+		-- LATERAL-MOVEMENT CORRECTION
+		-- When the murderer moves perpendicular to your aim vector the
+		-- plain velocity*time formula under-predicts because the shot
+		-- travels diagonally to intercept. We project their velocity
+		-- onto the perpendicular plane of our aim and boost it slightly.
+		-- ──────────────────────────────────────────
+		local aimDir      = losDirection.Unit
+		local velFwd      = actualVelocity:Dot(aimDir) * aimDir          -- component toward you
+		local velLateral  = actualVelocity - velFwd                       -- component across your FOV
+		local lateralMag  = velLateral.Magnitude
+	
+		-- If moving >80% laterally and fast, add a small extra lead
+		local lateralBoost = Vector3.zero
+		if lateralMag > 0 and speed > 5 then
+			local lateralRatio = lateralMag / speed
+			if lateralRatio > 0.6 then
+				-- extra time proportional to how perpendicular they are
+				local extraTime = timeToHit * lateralRatio * 0.25
+				lateralBoost = velLateral.Unit * lateralMag * extraTime
+			end
+		end
+	
+		-- ──────────────────────────────────────────
+		-- GRAVITY ARC (only for natural airborne, not fly hacks)
+		-- ──────────────────────────────────────────
+		local isFlying = char:FindFirstChildWhichIsA("BodyVelocity", true) ~= nil
+			or char:FindFirstChildWhichIsA("LinearVelocity", true) ~= nil
+	
+		local humState  = playerHum:GetState()
+		local inAir     = humState == Enum.HumanoidStateType.Freefall
+					   or humState == Enum.HumanoidStateType.Jumping
+	
 		local gravityOffset = Vector3.zero
 		if not isFlying and inAir and math.abs(actualVelocity.Y) > 0.5 then
-			-- Parábola limpia
-			gravityOffset = Vector3.new(0, -workspace.Gravity * 0.5 * (timeToHit^2), 0)
+			gravityOffset = Vector3.new(0, -workspace.Gravity * 0.5 * (timeToHit ^ 2), 0)
 		end
-		
-		local predictedPosition = playerPosition + (actualVelocity * timeToHit) + gravityOffset
+	
+		-- ──────────────────────────────────────────
+		-- FINAL PREDICTED POSITION
+		-- Apply confidence damping for jukers/spam-jumpers
+		-- ──────────────────────────────────────────
+		local rawOffset  = (actualVelocity * timeToHit) + lateralBoost + gravityOffset
+		local finalOffset = rawOffset * confidence
+	
+		local predictedPosition = playerPosition + finalOffset
 		return predictedPosition
 	end
 	
@@ -5284,6 +5410,14 @@ local function XXZOB_routine() -- Routine: StarterGui.YARHM.Murder Mystery 2
 	table.insert(module, {
 		Type = "Text",
 		Args = {"Tools"}
+	})
+
+	table.insert(module, {
+		Type = "Toggle",
+		NoSave = true,
+		Args = {"X EVADER (Predict Jukes)", function(Self, state)
+			xEvaderEnabled = state
+		end}
 	})
 
 
@@ -6998,6 +7132,156 @@ local function XAPKH_routine() -- Routine: StarterGui.YARHM.FloatingButtonSettin
 	end)
 end
 
+local function MVSD_routine()
+	local allowed = {
+		[12355337193] = true,
+		[135856908115931] = true,
+		[133108782275346] = true
+	}
+	if not allowed[game.PlaceId] and not allowed[game.GameId] then
+		return
+	end
+
+	local fu = require(getgenv().YARHM.FUNCTIONS)
+	local espindc = require(getgenv().YARHM.ESPIndicator)
+	
+	local module = {}
+	module["Name"] = "MVSD"
+	module["gameId"] = 0
+
+	local espcontainer = espindc.new({ArrowShowDistanceText = false})
+	
+	local ESPEnabled = false
+	local TeamCheckEnabled = false
+	local TriggerbotEnabled = false
+	local ShootDelay = 0
+	local Distance = 1000
+
+	local lplr = game:GetService("Players").LocalPlayer
+	local isrbxactive = iswindowactive or function() return true end
+
+	local function isSameTeam(player)
+		if not TeamCheckEnabled then return false end
+		if player.Team ~= nil and lplr.Team ~= nil then
+			return player.Team == lplr.Team
+		end
+		return false
+	end
+
+	task.spawn(function()
+		local rayCheck = RaycastParams.new()
+		local delayCheck = tick()
+		local mouseClicked = false
+
+		local function getTriggerBotTarget()
+			local gameCamera = workspace.CurrentCamera
+			if not gameCamera then return nil end
+			
+			rayCheck.FilterDescendantsInstances = {lplr.Character, gameCamera}
+			local ray = workspace:Raycast(gameCamera.CFrame.Position, gameCamera.CFrame.LookVector * Distance, rayCheck)
+			
+			if ray and ray.Instance then
+				local model = ray.Instance:FindFirstAncestorOfClass("Model")
+				if model then
+					local targetPlayer = game:GetService("Players"):GetPlayerFromCharacter(model)
+					if targetPlayer and targetPlayer ~= lplr and not isSameTeam(targetPlayer) then
+						local humanoid = model:FindFirstChild("Humanoid")
+						if humanoid and humanoid.Health > 0 then
+							return targetPlayer
+						end
+					end
+				end
+			end
+			return nil
+		end
+
+		while task.wait() do
+			if TriggerbotEnabled then
+				if mouse1click and isrbxactive() then
+					if getTriggerBotTarget() then
+						if delayCheck < tick() then
+							if mouseClicked then
+								if mouse1release then mouse1release() end
+								delayCheck = tick() + ShootDelay
+							else
+								if mouse1press then mouse1press() end
+							end
+							mouseClicked = not mouseClicked
+						end
+					else
+						if mouseClicked then
+							if mouse1release then mouse1release() end
+						end
+						mouseClicked = false
+					end
+				end
+			else
+				if mouseClicked and mouse1click and isrbxactive() then
+					if mouse1release then mouse1release() end
+					mouseClicked = false
+				end
+			end
+		end
+	end)
+
+	task.spawn(function()
+		while task.wait(1) do
+			if ESPEnabled then
+				espcontainer:RemoveGroup("MVSD_ESP")
+				for _, player in ipairs(game:GetService("Players"):GetPlayers()) do
+					if player ~= lplr and player.Character then
+						if not isSameTeam(player) then
+							espcontainer:Add(player.Character, {
+								GroupName = "MVSD_ESP",
+								AccentColor = Color3.new(1, 0, 0),
+								ArrowShow = false,
+								ShowLabel = true,
+								LabelText = player.Name
+							})
+						end
+					end
+				end
+			else
+				espcontainer:RemoveGroup("MVSD_ESP")
+			end
+		end
+	end)
+	
+	table.insert(module, { Type = "Text", Args = {"MVSD Exclusive"} })
+
+	table.insert(module, {
+		Type = "Toggle",
+		Args = {"ESP", function(Self, state) ESPEnabled = state end}
+	})
+
+	table.insert(module, {
+		Type = "Toggle",
+		Args = {"Team Check", function(Self, state) TeamCheckEnabled = state end}
+	})
+
+	table.insert(module, {
+		Type = "Toggle",
+		Args = {"Triggerbot", function(Self, state) TriggerbotEnabled = state end}
+	})
+
+	table.insert(module, {
+		Type = "Slider",
+		Args = {"Shoot Delay (Seoncds x 100)", 0, 100, 0, function(Self, value)
+			ShootDelay = value / 100
+		end}
+	})
+
+	table.insert(module, {
+		Type = "Slider",
+		Args = {"Distance (Studs)", 0, 1000, 1000, function(Self, value)
+			Distance = value
+		end}
+	})
+
+	repeat task.wait() until getgenv().Modules
+	table.insert(getgenv().Modules, module)
+end
+
 coroutine.wrap(CEBY_routine)()
 coroutine.wrap(DSZIHQM_routine)()
 coroutine.wrap(XXZOB_routine)()
@@ -7015,6 +7299,7 @@ coroutine.wrap(TVLRH_routine)()
 coroutine.wrap(KUFNO_routine)()
 coroutine.wrap(XLYNZG_routine)()
 coroutine.wrap(XAPKH_routine)()
+coroutine.wrap(MVSD_routine)()
 
 
 
